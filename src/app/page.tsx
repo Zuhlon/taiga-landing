@@ -999,6 +999,124 @@ function LandingConcept2() {
         </div>
       </section>
 
+      {/* Блок: Польза для отраслей */}
+      <section id="industries" style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: 800, textAlign: 'center', marginBottom: '20px', letterSpacing: '-1px' }}>
+            Рост выручки для <span className="gradient-text">вашей отрасли</span>
+          </h2>
+          <p style={{ textAlign: 'center', color: '#666', marginBottom: '60px', fontSize: '18px', maxWidth: '600px', margin: '0 auto 60px' }}>
+            Специализированные решения под особенности вашего бизнеса
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
+            {/* E-commerce */}
+            <div className="card-shine hover-lift" style={{
+              padding: '40px',
+              borderRadius: '24px',
+              backgroundColor: '#FAF8FF',
+              border: '1px solid rgba(118,67,215,0.1)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                <div style={{ fontSize: '40px' }}>🛒</div>
+                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#190750' }}>Интернет-магазины и E-commerce</h3>
+              </div>
+              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '24px' }}>
+                Каждый пропущенный звонок — потерянная продажа. Отслеживайте конверсию звонков в заказы, выявляйте упущенные допродажи.
+              </p>
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>+23%</div>
+                  <div style={{ fontSize: '12px', color: '#666' }}>конверсия звонков</div>
+                </div>
+                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#7643d7' }}>-40%</div>
+                  <div style={{ fontSize: '12px', color: '#666' }}>брошенные корзины</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Финансы */}
+            <div className="card-shine hover-lift" style={{
+              padding: '40px',
+              borderRadius: '24px',
+              backgroundColor: '#FAF8FF',
+              border: '1px solid rgba(118,67,215,0.1)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                <div style={{ fontSize: '40px' }}>🏦</div>
+                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#190750' }}>Финансы и банки</h3>
+              </div>
+              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '24px' }}>
+                Полная транскрибация для регулятора. Автоматическое выявление жалоб, запросов на возврат, подозрительных схем.
+              </p>
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>100%</div>
+                  <div style={{ fontSize: '12px', color: '#666' }}>запись разговоров</div>
+                </div>
+                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#7643d7' }}>-65%</div>
+                  <div style={{ fontSize: '12px', color: '#666' }}>время на аудит</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Телеком */}
+            <div className="card-shine hover-lift" style={{
+              padding: '40px',
+              borderRadius: '24px',
+              backgroundColor: '#FAF8FF',
+              border: '1px solid rgba(118,67,215,0.1)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                <div style={{ fontSize: '40px' }}>📡</div>
+                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#190750' }}>Телеком и связь</h3>
+              </div>
+              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '24px' }}>
+                Мониторинг качества связи в реальном времени. Прогноз оттока абонентов на основе анализа разговоров.
+              </p>
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>-35%</div>
+                  <div style={{ fontSize: '12px', color: '#666' }}>отток клиентов</div>
+                </div>
+                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#7643d7' }}>30 мин</div>
+                  <div style={{ fontSize: '12px', color: '#666' }}>реакция на сбои</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Медицина */}
+            <div className="card-shine hover-lift" style={{
+              padding: '40px',
+              borderRadius: '24px',
+              backgroundColor: '#FAF8FF',
+              border: '1px solid rgba(118,67,215,0.1)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                <div style={{ fontSize: '40px' }}>🏥</div>
+                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#190750' }}>Медицина и здравоохранение</h3>
+              </div>
+              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '24px' }}>
+                Запись разговоров для защиты от претензий. Контроль качества обслуживания и напоминания о записи.
+              </p>
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>+45%</div>
+                  <div style={{ fontSize: '12px', color: '#666' }}>явка на приём</div>
+                </div>
+                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '16px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#7643d7' }}>-80%</div>
+                  <div style={{ fontSize: '12px', color: '#666' }}>жалобы пациентов</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Блок: Выиграй больше - промо игры */}
       <section style={{ padding: '120px 20px', background: 'linear-gradient(135deg, #FAF8FF 0%, #FFF 50%, #FAF8FF 100%)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
