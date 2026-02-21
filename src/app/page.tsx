@@ -135,7 +135,7 @@ function LandingConcept1() {
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
             // ЗАМЕНИТЕ XXXXXXXX НА НОМЕР ВАШЕГО СЧЁТЧИКА
-            ym('XXXXXXXX', 'init', {
+            ym('106950455', 'init', {
               clickmap: true,
               trackLinks: true,
               accurateTrackBounce: true,
@@ -542,7 +542,7 @@ function LandingConcept1() {
         <noscript>
           <div>
             <img 
-              src="https://mc.yandex.ru/watch/XXXXXXXX" 
+              src="https://mc.yandex.ru/watch/106950455" 
               style={{ position: 'absolute', left: '-9999px' }} 
               alt="" 
             />
