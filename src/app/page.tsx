@@ -781,120 +781,47 @@ function LandingConcept2() {
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>📝</div>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>📋</div>
                   <div>
-                    <div style={{ fontWeight: 700, marginBottom: '4px', color: '#190750' }}>Конкретные примеры</div>
-                    <div style={{ fontSize: '14px', color: '#666', lineHeight: 1.5 }}>Список звонков, сообщений, событий, вошедших в расчёт</div>
+                    <div style={{ fontWeight: 700, marginBottom: '4px', color: '#190750' }}>Список событий</div>
+                    <div style={{ fontSize: '14px', color: '#666', lineHeight: 1.5 }}>Конкретные звонки и контакты, вошедшие в расчёт</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div style={{ position: 'relative' }}>
-              {/* Виджет до клика */}
-              <div style={{
-                padding: '32px',
-                borderRadius: '24px',
-                backgroundColor: '#FAF8FF',
-                border: '1px solid rgba(118,67,215,0.15)',
-                marginBottom: '24px',
-                position: 'relative',
-              }}>
-                <div style={{ fontSize: '13px', color: '#999', marginBottom: '8px', fontWeight: 600 }}>Виджет «Конверсия продаж»</div>
-                <div style={{ fontSize: '48px', fontWeight: 800, color: '#22C55E', marginBottom: '8px' }}>78%</div>
-                <div style={{ fontSize: '14px', color: '#666' }}>звонков завершились продажей</div>
-                
-                <div style={{
-                  position: 'absolute',
-                  top: '16px',
-                  right: '16px',
-                  padding: '6px 12px',
-                  borderRadius: '50px',
-                  backgroundColor: 'rgba(118,67,215,0.1)',
-                  fontSize: '11px',
-                  color: '#7643d7',
-                  fontWeight: 600,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                }}>
-                  <span>Нажмите</span>
-                  <span style={{ fontSize: '14px' }}>→</span>
+            <div style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '32px', border: '1px solid rgba(118,67,215,0.15)', boxShadow: '0 20px 60px rgba(118,67,215,0.1)' }}>
+              <div style={{ padding: '20px', backgroundColor: '#FAF8FF', borderRadius: '16px', marginBottom: '24px', border: '1px dashed rgba(118,67,215,0.3)' }}>
+                <div style={{ fontSize: '13px', color: '#999', marginBottom: '8px' }}>Метрика: Конверсия продаж</div>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+                  <span style={{ fontSize: '48px', fontWeight: 800, color: '#22C55E' }}>18.4%</span>
+                  <span style={{ color: '#22C55E', fontWeight: 600 }}>+3.2% к прошлому периоду</span>
                 </div>
               </div>
 
-              <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-                <div style={{ fontSize: '32px', color: '#7643d7' }}>↓</div>
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontWeight: 700, marginBottom: '12px', color: '#190750', fontSize: '14px' }}>Формула расчёта:</div>
+                <div style={{ padding: '16px', backgroundColor: '#190750', borderRadius: '12px', fontFamily: 'monospace', fontSize: '14px', color: '#FFF' }}>
+                  Конверсия = (Продажи / Контакты) × 100%
+                </div>
               </div>
 
-              {/* Детализация после клика */}
-              <div className="card-shine" style={{
-                padding: '32px',
-                borderRadius: '24px',
-                backgroundColor: '#FFF',
-                border: '2px solid #7643d7',
-                boxShadow: '0 10px 40px rgba(118,67,215,0.15)',
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                  <div style={{ fontSize: '16px', fontWeight: 700, color: '#190750' }}>🔍 Детализация расчёта</div>
-                  <div style={{ fontSize: '12px', color: '#7643d7', fontWeight: 600 }}>за сегодня</div>
-                </div>
-
-                <div style={{
-                  padding: '16px',
-                  backgroundColor: '#FAF8FF',
-                  borderRadius: '12px',
-                  marginBottom: '20px',
-                  border: '1px solid rgba(118,67,215,0.1)',
-                }}>
-                  <div style={{ fontSize: '11px', color: '#999', marginBottom: '8px', fontWeight: 600 }}>ФОРМУЛА</div>
-                  <div style={{ fontSize: '14px', color: '#190750', fontFamily: 'monospace' }}>
-                    Конверсия = Продажи / Звонки × 100%
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontWeight: 700, marginBottom: '12px', color: '#190750', fontSize: '14px' }}>Исходные данные:</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px', backgroundColor: '#FAF8FF', borderRadius: '8px' }}>
+                    <span style={{ color: '#666' }}>Всего контактов</span>
+                    <span style={{ fontWeight: 700, color: '#190750' }}>1,247</span>
                   </div>
-                  <div style={{ fontSize: '13px', color: '#666', marginTop: '8px' }}>
-                    = 156 / 200 × 100% = <strong style={{ color: '#22C55E' }}>78%</strong>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px', backgroundColor: '#FAF8FF', borderRadius: '8px' }}>
+                    <span style={{ color: '#666' }}>Успешных продаж</span>
+                    <span style={{ fontWeight: 700, color: '#22C55E' }}>229</span>
                   </div>
                 </div>
+              </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '20px' }}>
-                  <div style={{ padding: '12px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '10px', textAlign: 'center' }}>
-                    <div style={{ fontSize: '24px', fontWeight: 800, color: '#22C55E' }}>156</div>
-                    <div style={{ fontSize: '11px', color: '#666' }}>продаж</div>
-                  </div>
-                  <div style={{ padding: '12px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '10px', textAlign: 'center' }}>
-                    <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7' }}>200</div>
-                    <div style={{ fontSize: '11px', color: '#666' }}>звонков</div>
-                  </div>
-                </div>
-
-                <div style={{
-                  padding: '12px',
-                  backgroundColor: '#FAF8FF',
-                  borderRadius: '10px',
-                  fontSize: '12px',
-                  color: '#666',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                }}>
-                  <span style={{ fontSize: '16px' }}>🔗</span>
-                  <span>Источник: <strong style={{ color: '#190750' }}>AmoCRM API</strong> • обновлено 2 мин назад</span>
-                </div>
-
-                <div style={{ marginTop: '16px', textAlign: 'center' }}>
-                  <button style={{
-                    padding: '10px 20px',
-                    borderRadius: '50px',
-                    border: '1px solid #7643d7',
-                    backgroundColor: 'transparent',
-                    color: '#7643d7',
-                    fontWeight: 600,
-                    fontSize: '13px',
-                    cursor: 'pointer',
-                  }}>
-                    Посмотреть список звонков →
-                  </button>
-                </div>
+              <div style={{ fontSize: '12px', color: '#999', textAlign: 'center' }}>
+                Источники: AmoCRM API, Телефония Asterisk, Email SMTP
               </div>
             </div>
           </div>
@@ -903,242 +830,110 @@ function LandingConcept2() {
 
       {/* Блок: Все выигрывают */}
       <section id="wins" style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '48px', fontWeight: 800, textAlign: 'center', marginBottom: '20px', letterSpacing: '-1px' }}>
-            Все <span className="gradient-text">выигрывают</span> от роста выручки
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
+            От роста выручки <span className="gradient-text">выигрывают все</span>
           </h2>
-          <p style={{ textAlign: 'center', color: '#666', marginBottom: '80px', fontSize: '18px', maxWidth: '600px', margin: '0 auto 80px' }}>
-            Уникальная ценность для каждой роли в компании
+          <p style={{ fontSize: '18px', color: '#666', marginBottom: '80px', maxWidth: '600px', margin: '0 auto 80px' }}>
+            Контакт.ИИ создаёт ценность для каждого участника процесса
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px' }}>
             {/* Руководитель */}
-            <div className="card-shine hover-lift" style={{
-              padding: '40px',
-              borderRadius: '24px',
-              background: 'linear-gradient(180deg, rgba(118,67,215,0.08) 0%, #FFF 100%)',
-              border: '2px solid rgba(118,67,215,0.2)',
-            }}>
-              <div style={{ fontSize: '48px', marginBottom: '20px' }}>👔</div>
-              <h3 style={{ fontSize: '26px', fontWeight: 800, marginBottom: '20px', color: '#190750' }}>Руководитель</h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                {[
-                  'Видит рост выручки за 30 секунд',
-                  'Понимает, откуда приходят деньги',
-                  'Защищает выручку от утечек',
-                  'Экономит 160 часов в год',
-                ].map((item, i) => (
-                  <li key={i} style={{ marginBottom: '12px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <span style={{ color: '#22C55E', fontSize: '18px' }}>✓</span>
-                    <span style={{ color: '#666', lineHeight: 1.5 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: '24px', padding: '20px', backgroundColor: '#7643d7', borderRadius: '16px', textAlign: 'center' }}>
-                <div style={{ fontSize: '36px', fontWeight: 800, color: '#FFF' }}>340%</div>
-                <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.8)' }}>рост выручки за 3 месяца</div>
+            <div className="hover-lift" style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '48px 32px', border: '1px solid rgba(118,67,215,0.1)' }}>
+              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '40px', margin: '0 auto 24px' }}>
+                👔
+              </div>
+              <h3 style={{ fontSize: '24px', fontWeight: 800, marginBottom: '16px', color: '#190750' }}>Руководитель</h3>
+              <p style={{ color: '#666', marginBottom: '24px', lineHeight: 1.7 }}>
+                Видит рост выручки в реальном времени. Экономит 40 минут каждое утро на сборе отчётов. 
+                Получает ясную картину бизнеса за 30 секунд.
+              </p>
+              <div style={{ padding: '16px', backgroundColor: '#22C55E', borderRadius: '12px', color: '#FFF', fontWeight: 700 }}>
+                +340% выручки за 3 месяца
               </div>
             </div>
 
             {/* Администратор */}
-            <div className="card-shine hover-lift" style={{
-              padding: '40px',
-              borderRadius: '24px',
-              backgroundColor: '#FFF',
-              border: '1px solid rgba(118,67,215,0.1)',
-            }}>
-              <div style={{ fontSize: '48px', marginBottom: '20px' }}>⚙️</div>
-              <h3 style={{ fontSize: '26px', fontWeight: 800, marginBottom: '20px', color: '#190750' }}>Администратор</h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                {[
-                  'Настройка за 5 минут',
-                  'Узнаёт о проблемах мгновенно',
-                  'Автоматические отчёты',
-                  'Интеграции с АТС, CRM',
-                ].map((item, i) => (
-                  <li key={i} style={{ marginBottom: '12px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <span style={{ color: '#22C55E', fontSize: '18px' }}>✓</span>
-                    <span style={{ color: '#666', lineHeight: 1.5 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: '24px', padding: '20px', backgroundColor: '#FAF8FF', borderRadius: '16px', textAlign: 'center', border: '1px solid rgba(118,67,215,0.1)' }}>
-                <div style={{ fontSize: '36px', fontWeight: 800, color: '#7643d7' }}>×3</div>
-                <div style={{ fontSize: '13px', color: '#666' }}>быстрее реакция на проблемы</div>
+            <div className="hover-lift" style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '48px 32px', border: '1px solid rgba(118,67,215,0.1)' }}>
+              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '40px', margin: '0 auto 24px' }}>
+                🛠️
+              </div>
+              <h3 style={{ fontSize: '24px', fontWeight: 800, marginBottom: '16px', color: '#190750' }}>Администратор</h3>
+              <p style={{ color: '#666', marginBottom: '24px', lineHeight: 1.7 }}>
+                Настраивает за 5 минут без программистов. Меньше аварийных ситуаций. 
+                Становится экспертом по аналитике коммуникаций.
+              </p>
+              <div style={{ padding: '16px', backgroundColor: '#7643d7', borderRadius: '12px', color: '#FFF', fontWeight: 700 }}>
+                Настройка за 5 минут
               </div>
             </div>
 
             {/* Оператор */}
-            <div className="card-shine hover-lift" style={{
-              padding: '40px',
-              borderRadius: '24px',
-              backgroundColor: '#FFF',
-              border: '1px solid rgba(118,67,215,0.1)',
-            }}>
-              <div style={{ fontSize: '48px', marginBottom: '20px' }}>🎧</div>
-              <h3 style={{ fontSize: '26px', fontWeight: 800, marginBottom: '20px', color: '#190750' }}>Оператор</h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                {[
-                  'Видит свой вклад в выручку',
-                  'Вся история клиента под рукой',
-                  'ИИ-подсказки для закрытия',
-                  'Рейтинг продаж и геймификация',
-                ].map((item, i) => (
-                  <li key={i} style={{ marginBottom: '12px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <span style={{ color: '#22C55E', fontSize: '18px' }}>✓</span>
-                    <span style={{ color: '#666', lineHeight: 1.5 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: '24px', padding: '20px', backgroundColor: '#FAF8FF', borderRadius: '16px', textAlign: 'center', border: '1px solid rgba(118,67,215,0.1)' }}>
-                <div style={{ fontSize: '36px', fontWeight: 800, color: '#22C55E' }}>+18%</div>
-                <div style={{ fontSize: '13px', color: '#666' }}>рост личных продаж</div>
+            <div className="hover-lift" style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '48px 32px', border: '1px solid rgba(118,67,215,0.1)' }}>
+              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '40px', margin: '0 auto 24px' }}>
+                🎧
+              </div>
+              <h3 style={{ fontSize: '24px', fontWeight: 800, marginBottom: '16px', color: '#190750' }}>Оператор</h3>
+              <p style={{ color: '#666', marginBottom: '24px', lineHeight: 1.7 }}>
+                Видит свой вклад в выручку. Получает рекомендации по улучшению. 
+                Участвует в рейтингах и получает признание.
+              </p>
+              <div style={{ padding: '16px', backgroundColor: '#3B82F6', borderRadius: '12px', color: '#FFF', fontWeight: 700 }}>
+                +18% производительность
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Блок: Польза для отраслей */}
-      <section id="industries" style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '48px', fontWeight: 800, textAlign: 'center', marginBottom: '20px', letterSpacing: '-1px' }}>
-            Рост выручки для <span className="gradient-text">вашей отрасли</span>
+      {/* Блок: Отрасли */}
+      <section style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
+            Польза для <span className="gradient-text">вашей отрасли</span>
           </h2>
-          <p style={{ textAlign: 'center', color: '#666', marginBottom: '60px', fontSize: '18px', maxWidth: '600px', margin: '0 auto 60px' }}>
-            Специализированные решения под особенности вашего бизнеса
+          <p style={{ fontSize: '18px', color: '#666', marginBottom: '60px', maxWidth: '600px', margin: '0 auto 60px' }}>
+            Адаптированные решения для роста выручки в разных секторах
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
-            {/* E-commerce */}
-            <div className="card-shine hover-lift" style={{
-              padding: '40px',
-              borderRadius: '24px',
-              backgroundColor: '#FAF8FF',
-              border: '1px solid rgba(118,67,215,0.1)',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                <div style={{ fontSize: '40px' }}>🛒</div>
-                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#190750' }}>Интернет-магазины и E-commerce</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+            {[
+              { icon: '🛒', title: 'E-commerce', desc: 'Снижение брошенных корзин на 23%', color: '#FF6B35' },
+              { icon: '🏦', title: 'Финансы', desc: 'Рост кросс-продаж на 34%', color: '#22C55E' },
+              { icon: '📞', title: 'Телеком', desc: 'Снижение оттока на 18%', color: '#7643d7' },
+              { icon: '🏥', title: 'Здравоохранение', desc: 'Рост повторных записей на 41%', color: '#3B82F6' },
+            ].map((industry, i) => (
+              <div key={i} className="hover-lift" style={{ backgroundColor: '#FAF8FF', borderRadius: '20px', padding: '32px', border: '1px solid rgba(118,67,215,0.1)' }}>
+                <div style={{ fontSize: '48px', marginBottom: '16px' }}>{industry.icon}</div>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: '#190750' }}>{industry.title}</h3>
+                <p style={{ fontSize: '14px', color: '#666', marginBottom: '16px' }}>{industry.desc}</p>
+                <div style={{ height: '4px', backgroundColor: industry.color, borderRadius: '2px' }} />
               </div>
-              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '24px' }}>
-                Каждый пропущенный звонок — потерянная продажа. Отслеживайте конверсию звонков в заказы, выявляйте упущенные допродажи.
-              </p>
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>+23%</div>
-                  <div style={{ fontSize: '12px', color: '#666' }}>конверсия звонков</div>
-                </div>
-                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#7643d7' }}>-40%</div>
-                  <div style={{ fontSize: '12px', color: '#666' }}>брошенные корзины</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Финансы */}
-            <div className="card-shine hover-lift" style={{
-              padding: '40px',
-              borderRadius: '24px',
-              backgroundColor: '#FAF8FF',
-              border: '1px solid rgba(118,67,215,0.1)',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                <div style={{ fontSize: '40px' }}>🏦</div>
-                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#190750' }}>Финансы и банки</h3>
-              </div>
-              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '24px' }}>
-                Полная транскрибация для регулятора. Автоматическое выявление жалоб, запросов на возврат, подозрительных схем.
-              </p>
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>100%</div>
-                  <div style={{ fontSize: '12px', color: '#666' }}>запись разговоров</div>
-                </div>
-                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#7643d7' }}>-65%</div>
-                  <div style={{ fontSize: '12px', color: '#666' }}>время на аудит</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Телеком */}
-            <div className="card-shine hover-lift" style={{
-              padding: '40px',
-              borderRadius: '24px',
-              backgroundColor: '#FAF8FF',
-              border: '1px solid rgba(118,67,215,0.1)',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                <div style={{ fontSize: '40px' }}>📡</div>
-                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#190750' }}>Телеком и связь</h3>
-              </div>
-              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '24px' }}>
-                Мониторинг качества связи в реальном времени. Прогноз оттока абонентов на основе анализа разговоров.
-              </p>
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>-35%</div>
-                  <div style={{ fontSize: '12px', color: '#666' }}>отток клиентов</div>
-                </div>
-                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#7643d7' }}>30 мин</div>
-                  <div style={{ fontSize: '12px', color: '#666' }}>реакция на сбои</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Медицина */}
-            <div className="card-shine hover-lift" style={{
-              padding: '40px',
-              borderRadius: '24px',
-              backgroundColor: '#FAF8FF',
-              border: '1px solid rgba(118,67,215,0.1)',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                <div style={{ fontSize: '40px' }}>🏥</div>
-                <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#190750' }}>Медицина и здравоохранение</h3>
-              </div>
-              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '24px' }}>
-                Запись разговоров для защиты от претензий. Контроль качества обслуживания и напоминания о записи.
-              </p>
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(34,197,94,0.08)', borderRadius: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>+45%</div>
-                  <div style={{ fontSize: '12px', color: '#666' }}>явка на приём</div>
-                </div>
-                <div style={{ flex: 1, padding: '20px', backgroundColor: 'rgba(118,67,215,0.08)', borderRadius: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', fontWeight: 800, color: '#7643d7' }}>-80%</div>
-                  <div style={{ fontSize: '12px', color: '#666' }}>жалобы пациентов</div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Блок: Выиграй больше - промо игры */}
-      <section style={{ padding: '120px 20px', background: 'linear-gradient(135deg, #FAF8FF 0%, #FFF 50%, #FAF8FF 100%)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+      {/* Promo Game Block */}
+      <section style={{ padding: '120px 20px', background: 'linear-gradient(180deg, #FFF8E7 0%, #FFF 100%)' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
             <div>
               <div style={{
                 display: 'inline-block',
                 padding: '10px 24px',
                 borderRadius: '50px',
-                backgroundColor: 'rgba(255,165,0,0.1)',
+                backgroundColor: 'rgba(255,165,0,0.15)',
                 marginBottom: '24px',
                 fontSize: '14px',
                 color: '#FF8C00',
                 fontWeight: 600,
               }}>
-                🍯 Эксклюзивная акция
+                🎮 Виральный элемент
               </div>
-              <h2 style={{ fontSize: '44px', fontWeight: 800, marginBottom: '24px', lineHeight: 1.2, letterSpacing: '-1px' }}>
-                Выиграйте больше с{' '}
-                <span style={{ background: 'linear-gradient(90deg, #FFD700, #FFA500)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  ростом выручки
-                </span>
+              <h2 style={{ fontSize: '44px', fontWeight: 800, marginBottom: '24px', lineHeight: 1.2, letterSpacing: '-1px', color: '#190750' }}>
+                Игра <span style={{ color: '#FF8C00' }}>«Мёдом намазано»</span>
               </h2>
               <p style={{ fontSize: '18px', color: '#666', marginBottom: '32px', lineHeight: 1.7 }}>
                 Играйте в нашу игру <strong style={{ color: '#FF8C00' }}>«Мёдом намазано»</strong> и выиграйте месяц бесплатного 
@@ -1280,10 +1075,924 @@ function LandingConcept2() {
 }
 
 // ============================================
+// КОНЦЕПТ 3: Для рекомендации РУКОВОДИТЕЛЮ
+// ============================================
+function LandingConcept3() {
+  return (
+    <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', color: '#190750' }}>
+      <style>{styles}</style>
+      
+      {/* Header */}
+      <header style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        padding: '16px 40px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: 'rgba(255,255,255,0.98)',
+        backdropFilter: 'blur(10px)',
+        zIndex: 100,
+        borderBottom: '1px solid rgba(118,67,215,0.1)',
+      }}>
+        <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7' }}>
+          Контакт.ИИ
+        </div>
+        <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+          <a href="#roi" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>ROI</a>
+          <a href="#metrics" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Метрики</a>
+          <a href="#industries" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Отрасли</a>
+          <a href="#demo" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Демо</a>
+          <button className="btn-primary" style={{
+            padding: '12px 28px',
+            borderRadius: '50px',
+            border: 'none',
+            backgroundColor: '#7643d7',
+            color: '#FFF',
+            fontWeight: 600,
+            cursor: 'pointer',
+            boxShadow: '0 4px 20px rgba(118,67,215,0.3)',
+          }}>
+            Запросить КП
+          </button>
+        </nav>
+      </header>
+
+      {/* Hero - Акцент на рост выручки */}
+      <section style={{
+        paddingTop: '160px',
+        paddingBottom: '100px',
+        textAlign: 'center',
+        background: 'linear-gradient(180deg, #FAF8FF 0%, #FFFFFF 100%)',
+      }}>
+        <div style={{
+          display: 'inline-block',
+          padding: '10px 24px',
+          borderRadius: '50px',
+          backgroundColor: 'rgba(34,197,94,0.1)',
+          marginBottom: '32px',
+          fontSize: '14px',
+          color: '#22C55E',
+          fontWeight: 600,
+        }}>
+          💰 Платформа роста выручки через коммуникации
+        </div>
+        
+        <h1 style={{
+          fontSize: '56px',
+          fontWeight: 800,
+          lineHeight: 1.1,
+          marginBottom: '32px',
+          maxWidth: '1000px',
+          margin: '0 auto 32px',
+          letterSpacing: '-2px',
+        }}>
+          Каждый контакт — <span className="gradient-text">управляемый источник продаж</span>
+        </h1>
+        
+        <p style={{
+          fontSize: '20px',
+          color: '#666',
+          maxWidth: '700px',
+          margin: '0 auto 24px',
+          lineHeight: 1.7,
+        }}>
+          Контакт.ИИ — это не отчёты. Это инструмент, который превращает коммуникации в измеримый рост выручки компании.
+        </p>
+
+        {/* Ключевые цифры для руководителя */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '60px', marginBottom: '48px' }}>
+          {[
+            { value: '+340%', label: 'Рост выручки', sublabel: 'за 3 месяца' },
+            { value: '+18%', label: 'Конверсия', sublabel: 'продаж' },
+            { value: '30 сек', label: 'До инсайта', sublabel: 'вместо 40 минут' },
+          ].map((stat, i) => (
+            <div key={i} style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '48px', fontWeight: 800, color: '#22C55E' }}>{stat.value}</div>
+              <div style={{ fontSize: '16px', color: '#190750', fontWeight: 600 }}>{stat.label}</div>
+              <div style={{ fontSize: '13px', color: '#999' }}>{stat.sublabel}</div>
+            </div>
+          ))}
+        </div>
+        
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '60px' }}>
+          <button className="btn-primary" style={{
+            padding: '18px 40px',
+            borderRadius: '50px',
+            border: 'none',
+            backgroundColor: '#22C55E',
+            color: '#FFF',
+            fontWeight: 600,
+            fontSize: '17px',
+            cursor: 'pointer',
+            boxShadow: '0 8px 30px rgba(34,197,94,0.35)',
+          }}>
+            Получить расчёт ROI
+          </button>
+          <button className="hover-lift" style={{
+            padding: '18px 40px',
+            borderRadius: '50px',
+            border: '2px solid #7643d7',
+            backgroundColor: 'transparent',
+            color: '#7643d7',
+            fontWeight: 600,
+            fontSize: '17px',
+            cursor: 'pointer',
+          }}>
+            Посмотреть демо
+          </button>
+        </div>
+
+        {/* Светофор метрик - для планёрки */}
+        <div style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          backgroundColor: '#FFF',
+          borderRadius: '24px',
+          padding: '40px',
+          border: '1px solid rgba(118,67,215,0.15)',
+          boxShadow: '0 20px 60px rgba(118,67,215,0.12)',
+        }}>
+          <div style={{ fontSize: '13px', color: '#999', marginBottom: '16px', fontWeight: 600, textAlign: 'center' }}>
+            Статус бизнеса за 30 секунд — идеально для планёрки
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '24px' }}>
+            <div className="animate-pulse-slow" style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#22C55E', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '32px', boxShadow: '0 0 30px rgba(34,197,94,0.3)' }}>✓</div>
+            <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#FFD700', opacity: 0.3 }} />
+            <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#EF4444', opacity: 0.3 }} />
+          </div>
+          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            <div style={{ fontSize: '28px', fontWeight: 800, color: '#22C55E' }}>Выручка растёт</div>
+            <div style={{ color: '#666', marginTop: '8px' }}>1,247 контактов сегодня • 156 продаж • 2.3M ₽ выручка • +18% к плану</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ROI блок */}
+      <section id="roi" style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: 800, textAlign: 'center', marginBottom: '20px', letterSpacing: '-1px' }}>
+            Измеримый <span className="gradient-text">возврат инвестиций</span>
+          </h2>
+          <p style={{ textAlign: 'center', color: '#666', marginBottom: '80px', fontSize: '18px', maxWidth: '600px', margin: '0 auto 80px' }}>
+            Конкретные цифры для бизнес-обоснования
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+            {/* До внедрения */}
+            <div style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '40px', border: '1px solid rgba(239,68,68,0.2)' }}>
+              <div style={{ fontSize: '13px', color: '#EF4444', marginBottom: '16px', fontWeight: 600 }}>ДО внедрения Контакт.ИИ</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {[
+                  { label: 'Упущенных продаж в неделю', value: '25', sum: '1,040,000 ₽' },
+                  { label: 'Время на сбор отчётов', value: '40 мин', sum: 'каждое утро' },
+                  { label: 'Скрытая утечка выручки', value: '~15%', sum: 'от оборота' },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', backgroundColor: 'rgba(239,68,68,0.05)', borderRadius: '12px' }}>
+                    <span style={{ color: '#666', fontSize: '14px' }}>{item.label}</span>
+                    <div style={{ textAlign: 'right' }}>
+                      <div style={{ fontWeight: 700, color: '#EF4444' }}>{item.value}</div>
+                      <div style={{ fontSize: '11px', color: '#999' }}>{item.sum}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* После внедрения */}
+            <div style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '40px', border: '1px solid rgba(34,197,94,0.2)' }}>
+              <div style={{ fontSize: '13px', color: '#22C55E', marginBottom: '16px', fontWeight: 600 }}>ПОСЛЕ внедрения Контакт.ИИ</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {[
+                  { label: 'Обнаружено упущенных продаж', value: '229', sum: 'за месяц' },
+                  { label: 'Время на анализ бизнеса', value: '30 сек', sum: 'вместо 40 минут' },
+                  { label: 'Рост конверсии', value: '+18%', sum: 'первый месяц' },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', backgroundColor: 'rgba(34,197,94,0.05)', borderRadius: '12px' }}>
+                    <span style={{ color: '#666', fontSize: '14px' }}>{item.label}</span>
+                    <div style={{ textAlign: 'right' }}>
+                      <div style={{ fontWeight: 700, color: '#22C55E' }}>{item.value}</div>
+                      <div style={{ fontSize: '11px', color: '#999' }}>{item.sum}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Итоговый ROI */}
+          <div style={{ marginTop: '60px', textAlign: 'center' }}>
+            <div style={{ display: 'inline-block', padding: '32px 60px', backgroundColor: '#22C55E', borderRadius: '20px', boxShadow: '0 12px 40px rgba(34,197,94,0.3)' }}>
+              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', marginBottom: '8px' }}>Средний ROI клиентов</div>
+              <div style={{ fontSize: '56px', fontWeight: 800, color: '#FFF' }}>340%</div>
+              <div style={{ fontSize: '16px', color: '#FFF' }}>за 3 месяца использования</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Прозрачность расчётов */}
+      <section id="metrics" style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+            <div>
+              <div style={{
+                display: 'inline-block',
+                padding: '10px 24px',
+                borderRadius: '50px',
+                backgroundColor: 'rgba(118,67,215,0.1)',
+                marginBottom: '24px',
+                fontSize: '14px',
+                color: '#7643d7',
+                fontWeight: 600,
+              }}>
+                🔍 Полная прозрачность
+              </div>
+              <h2 style={{ fontSize: '44px', fontWeight: 800, marginBottom: '24px', lineHeight: 1.2, letterSpacing: '-1px', color: '#190750' }}>
+                Как получились эти <span className="gradient-text">цифры?</span>
+              </h2>
+              <p style={{ fontSize: '18px', color: '#666', marginBottom: '32px', lineHeight: 1.7 }}>
+                При клике на любую метрику открывается полная детализация: источники данных, формула расчёта, 
+                конкретные события. Никаких «чёрных ящиков» — вы всегда можете проверить и обосновать цифры.
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>📊</div>
+                  <div>
+                    <div style={{ fontWeight: 700, marginBottom: '4px', color: '#190750' }}>Источники данных</div>
+                    <div style={{ fontSize: '14px', color: '#666', lineHeight: 1.5 }}>AmoCRM, Asterisk, почта — все системы в одном месте</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>🧮</div>
+                  <div>
+                    <div style={{ fontWeight: 700, marginBottom: '4px', color: '#190750' }}>Открытые формулы</div>
+                    <div style={{ fontSize: '14px', color: '#666', lineHeight: 1.5 }}>Каждая метрика рассчитывается по понятной методике</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '32px', border: '1px solid rgba(118,67,215,0.15)', boxShadow: '0 20px 60px rgba(118,67,215,0.1)' }}>
+              <div style={{ padding: '20px', backgroundColor: '#FAF8FF', borderRadius: '16px', marginBottom: '24px', border: '1px dashed rgba(118,67,215,0.3)' }}>
+                <div style={{ fontSize: '13px', color: '#999', marginBottom: '8px' }}>Метрика: Конверсия продаж</div>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+                  <span style={{ fontSize: '48px', fontWeight: 800, color: '#22C55E' }}>18.4%</span>
+                  <span style={{ color: '#22C55E', fontWeight: 600 }}>+3.2% к прошлому периоду</span>
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontWeight: 700, marginBottom: '12px', color: '#190750', fontSize: '14px' }}>Формула расчёта:</div>
+                <div style={{ padding: '16px', backgroundColor: '#190750', borderRadius: '12px', fontFamily: 'monospace', fontSize: '14px', color: '#FFF' }}>
+                  Конверсия = (Продажи / Контакты) × 100%
+                </div>
+              </div>
+
+              <div style={{ fontSize: '12px', color: '#999', textAlign: 'center' }}>
+                Источники: AmoCRM API, Телефония Asterisk, Email SMTP
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Отрасли */}
+      <section id="industries" style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
+            Решения для <span className="gradient-text">вашей отрасли</span>
+          </h2>
+          <p style={{ fontSize: '18px', color: '#666', marginBottom: '60px', maxWidth: '600px', margin: '0 auto 60px' }}>
+            Адаптированные метрики и KPI для конкретного бизнеса
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+            {[
+              { icon: '🛒', title: 'E-commerce', metric: '+23% снижения брошенных корзин', color: '#FF6B35' },
+              { icon: '🏦', title: 'Финансы', metric: '+34% роста кросс-продаж', color: '#22C55E' },
+              { icon: '📞', title: 'Телеком', metric: '-18% оттока клиентов', color: '#7643d7' },
+              { icon: '🏥', title: 'Здравоохранение', metric: '+41% повторных записей', color: '#3B82F6' },
+            ].map((industry, i) => (
+              <div key={i} className="hover-lift" style={{ backgroundColor: '#FFF', borderRadius: '20px', padding: '32px', border: '1px solid rgba(118,67,215,0.1)' }}>
+                <div style={{ fontSize: '48px', marginBottom: '16px' }}>{industry.icon}</div>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px', color: '#190750' }}>{industry.title}</h3>
+                <div style={{ padding: '12px', backgroundColor: `${industry.color}15`, borderRadius: '8px', marginBottom: '16px' }}>
+                  <span style={{ color: industry.color, fontWeight: 600, fontSize: '14px' }}>{industry.metric}</span>
+                </div>
+                <div style={{ height: '4px', backgroundColor: industry.color, borderRadius: '2px' }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA для руководителя */}
+      <section id="demo" style={{ padding: '120px 20px', textAlign: 'center', backgroundColor: '#190750' }}>
+        <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '24px', color: '#FFF' }}>
+          Готовы обсудить рост выручки?
+        </h2>
+        <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', marginBottom: '48px', maxWidth: '500px', margin: '0 auto 48px' }}>
+          Получите расчёт ROI для вашего бизнеса за 15 минут
+        </p>
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+          <button className="btn-primary animate-glow" style={{
+            padding: '20px 56px',
+            borderRadius: '50px',
+            border: 'none',
+            backgroundColor: '#22C55E',
+            color: '#FFF',
+            fontWeight: 700,
+            fontSize: '18px',
+            cursor: 'pointer',
+            boxShadow: '0 8px 40px rgba(34,197,94,0.5)',
+          }}>
+            Получить расчёт ROI
+          </button>
+          <button className="hover-lift" style={{
+            padding: '20px 56px',
+            borderRadius: '50px',
+            border: '2px solid rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
+            color: '#FFF',
+            fontWeight: 700,
+            fontSize: '18px',
+            cursor: 'pointer',
+          }}>
+            Назначить демо
+          </button>
+        </div>
+        <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center', gap: '32px', color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
+          <span>✓ Расчёт за 15 минут</span>
+          <span>✓ Демо для команды</span>
+          <span>✓ Пилотный проект</span>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ padding: '60px 20px', borderTop: '1px solid rgba(118,67,215,0.1)', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px' }}>
+          <div>
+            <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7', marginBottom: '16px' }}>
+              Контакт.ИИ
+            </div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.6 }}>
+              Платформа роста выручки через коммуникации.
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Продукт</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>Витрина виджетов</div>
+              <div>ИИ-ассистент</div>
+              <div>Транскрибация</div>
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Компания</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>О нас</div>
+              <div>Карьера</div>
+              <div>Блог</div>
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Контакты</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>📞 8 800 123-45-67</div>
+              <div>📧 info@contact-ai.ru</div>
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', color: '#999', fontSize: '12px', marginTop: '40px' }}>
+          © 2026 Контакт.ИИ. Все права защищены.
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+// ============================================
+// КОНЦЕПТ 4: Для рекомендации КОЛЛЕГЕ
+// ============================================
+function LandingConcept4() {
+  return (
+    <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', color: '#190750' }}>
+      <style>{styles}</style>
+      
+      {/* Header */}
+      <header style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        padding: '16px 40px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: 'rgba(255,255,255,0.98)',
+        backdropFilter: 'blur(10px)',
+        zIndex: 100,
+        borderBottom: '1px solid rgba(118,67,215,0.1)',
+      }}>
+        <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7' }}>
+          Контакт.ИИ
+        </div>
+        <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+          <a href="#integrations" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Интеграции</a>
+          <a href="#transparency" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Прозрачность</a>
+          <a href="#setup" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Настройка</a>
+          <a href="#game" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Игра</a>
+          <button className="btn-primary" style={{
+            padding: '12px 28px',
+            borderRadius: '50px',
+            border: 'none',
+            backgroundColor: '#7643d7',
+            color: '#FFF',
+            fontWeight: 600,
+            cursor: 'pointer',
+            boxShadow: '0 4px 20px rgba(118,67,215,0.3)',
+          }}>
+            Начать бесплатно
+          </button>
+        </nav>
+      </header>
+
+      {/* Hero - Акцент на решение боли */}
+      <section style={{
+        paddingTop: '160px',
+        paddingBottom: '100px',
+        textAlign: 'center',
+        background: 'linear-gradient(180deg, #FAF8FF 0%, #FFFFFF 100%)',
+      }}>
+        <div style={{
+          display: 'inline-block',
+          padding: '10px 24px',
+          borderRadius: '50px',
+          backgroundColor: 'rgba(59,130,246,0.1)',
+          marginBottom: '32px',
+          fontSize: '14px',
+          color: '#3B82F6',
+          fontWeight: 600,
+        }}>
+          🛠️ Для администраторов IP-телефонии и CRM
+        </div>
+        
+        <h1 style={{
+          fontSize: '56px',
+          fontWeight: 800,
+          lineHeight: 1.1,
+          marginBottom: '32px',
+          maxWidth: '1000px',
+          margin: '0 auto 32px',
+          letterSpacing: '-2px',
+        }}>
+          Наконец-то не нужно <span className="gradient-text">вручную прослушивать звонки</span>
+        </h1>
+        
+        <p style={{
+          fontSize: '20px',
+          color: '#666',
+          maxWidth: '700px',
+          margin: '0 auto 24px',
+          lineHeight: 1.7,
+        }}>
+          Контакт.ИИ — ИИ-аналитика, которая экономит часы рутинной работы. Настройка за 5 минут, 
+          все формулы открыты, работает с вашими системами.
+        </p>
+
+        {/* Ключевые преимущества для админа */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '48px' }}>
+          {[
+            { icon: '⚡', label: 'Настройка 5 минут', desc: 'без программистов' },
+            { icon: '🔓', label: 'Открытые формулы', desc: 'никаких чёрных ящиков' },
+            { icon: '🔗', label: 'Ваши системы', desc: 'Asterisk, AmoCRM, Битрикс24' },
+          ].map((item, i) => (
+            <div key={i} style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '32px', marginBottom: '8px' }}>{item.icon}</div>
+              <div style={{ fontSize: '16px', fontWeight: 700, color: '#190750' }}>{item.label}</div>
+              <div style={{ fontSize: '13px', color: '#999' }}>{item.desc}</div>
+            </div>
+          ))}
+        </div>
+        
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '60px' }}>
+          <button className="btn-primary" style={{
+            padding: '18px 40px',
+            borderRadius: '50px',
+            border: 'none',
+            backgroundColor: '#7643d7',
+            color: '#FFF',
+            fontWeight: 600,
+            fontSize: '17px',
+            cursor: 'pointer',
+            boxShadow: '0 8px 30px rgba(118,67,215,0.35)',
+          }}>
+            Попробовать 14 дней бесплатно
+          </button>
+          <button className="hover-lift" style={{
+            padding: '18px 40px',
+            borderRadius: '50px',
+            border: '2px solid #7643d7',
+            backgroundColor: 'transparent',
+            color: '#7643d7',
+            fontWeight: 600,
+            fontSize: '17px',
+            cursor: 'pointer',
+          }}>
+            Посмотреть демо
+          </button>
+        </div>
+
+        {/* Пример экономии времени */}
+        <div style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          backgroundColor: '#FFF',
+          borderRadius: '24px',
+          padding: '40px',
+          border: '1px solid rgba(118,67,215,0.15)',
+          boxShadow: '0 20px 60px rgba(118,67,215,0.12)',
+        }}>
+          <div style={{ fontSize: '13px', color: '#999', marginBottom: '20px', fontWeight: 600, textAlign: 'center' }}>
+            ИИ-анализ вместо ручного прослушивания
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px' }}>
+            {[
+              { icon: '📞', before: '2 часа/день', after: '5 минут', label: 'Прослушивание звонков' },
+              { icon: '📊', before: '40 минут', after: '30 секунд', label: 'Сбор отчётов' },
+              { icon: '🔍', before: 'Вручную', after: 'Автоматически', label: 'Поиск проблем' },
+            ].map((item, i) => (
+              <div key={i} style={{ textAlign: 'center', padding: '24px', backgroundColor: '#FAF8FF', borderRadius: '16px' }}>
+                <div style={{ fontSize: '32px', marginBottom: '12px' }}>{item.icon}</div>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: '#190750', marginBottom: '12px' }}>{item.label}</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <div style={{ fontSize: '12px', color: '#EF4444', textDecoration: 'line-through' }}>{item.before}</div>
+                  <div style={{ fontSize: '18px', fontWeight: 800, color: '#22C55E' }}>{item.after}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Интеграции */}
+      <section id="integrations" style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
+            Работает с <span className="gradient-text">вашими системами</span>
+          </h2>
+          <p style={{ fontSize: '18px', color: '#666', marginBottom: '60px', maxWidth: '600px', margin: '0 auto 60px' }}>
+            Интеграции из коробки с популярными системами телефонии и CRM
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+            {[
+              { icon: '📞', title: 'Asterisk', desc: 'SIP, AMI, ARI' },
+              { icon: '📱', title: 'FreePBX', desc: 'Модуль интеграции' },
+              { icon: '💼', title: 'AmoCRM', desc: 'API + Webhooks' },
+              { icon: '📋', title: 'Битрикс24', desc: 'REST API' },
+            ].map((sys, i) => (
+              <div key={i} className="hover-lift" style={{ backgroundColor: '#FFF', borderRadius: '20px', padding: '32px', border: '1px solid rgba(118,67,215,0.1)' }}>
+                <div style={{ fontSize: '48px', marginBottom: '16px' }}>{sys.icon}</div>
+                <div style={{ fontWeight: 700, marginBottom: '8px', color: '#190750' }}>{sys.title}</div>
+                <div style={{ fontSize: '13px', color: '#999' }}>{sys.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: '40px', padding: '24px', backgroundColor: '#FFF', borderRadius: '16px', border: '1px solid rgba(118,67,215,0.1)', display: 'inline-block' }}>
+            <span style={{ color: '#666' }}>А также: </span>
+            <span style={{ color: '#7643d7', fontWeight: 600 }}>Mango, UIS, Telphin, Zadarma, RetailCRM, Salesforce</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Прозрачность */}
+      <section id="transparency" style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+            <div>
+              <div style={{
+                display: 'inline-block',
+                padding: '10px 24px',
+                borderRadius: '50px',
+                backgroundColor: 'rgba(34,197,94,0.1)',
+                marginBottom: '24px',
+                fontSize: '14px',
+                color: '#22C55E',
+                fontWeight: 600,
+              }}>
+                🔓 Никаких чёрных ящиков
+              </div>
+              <h2 style={{ fontSize: '44px', fontWeight: 800, marginBottom: '24px', lineHeight: 1.2, letterSpacing: '-1px', color: '#190750' }}>
+                Все формулы <span className="gradient-text">открыты</span>
+              </h2>
+              <p style={{ fontSize: '18px', color: '#666', marginBottom: '32px', lineHeight: 1.7 }}>
+                Нажмите на любую метрику — увидите формулу расчёта, источники данных и 
+                конкретные события, которые в неё вошли. Полная прозрачность для технарей.
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>📊</div>
+                  <div>
+                    <div style={{ fontWeight: 700, marginBottom: '4px', color: '#190750' }}>Источники данных</div>
+                    <div style={{ fontSize: '14px', color: '#666', lineHeight: 1.5 }}>Какие API и системы предоставили данные</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>🧮</div>
+                  <div>
+                    <div style={{ fontWeight: 700, marginBottom: '4px', color: '#190750' }}>Формулы расчёта</div>
+                    <div style={{ fontSize: '14px', color: '#666', lineHeight: 1.5 }}>Понятное описание методики для каждой метрики</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(118,67,215,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>📋</div>
+                  <div>
+                    <div style={{ fontWeight: 700, marginBottom: '4px', color: '#190750' }}>Список событий</div>
+                    <div style={{ fontSize: '14px', color: '#666', lineHeight: 1.5 }}>Конкретные звонки и контакты в расчёте</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '32px', border: '1px solid rgba(118,67,215,0.15)', boxShadow: '0 20px 60px rgba(118,67,215,0.1)' }}>
+              <div style={{ padding: '20px', backgroundColor: '#FAF8FF', borderRadius: '16px', marginBottom: '24px', border: '1px dashed rgba(118,67,215,0.3)' }}>
+                <div style={{ fontSize: '13px', color: '#999', marginBottom: '8px' }}>Метрика: Конверсия продаж</div>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+                  <span style={{ fontSize: '48px', fontWeight: 800, color: '#22C55E' }}>18.4%</span>
+                  <span style={{ color: '#22C55E', fontWeight: 600 }}>+3.2%</span>
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontWeight: 700, marginBottom: '12px', color: '#190750', fontSize: '14px' }}>Формула расчёта:</div>
+                <div style={{ padding: '16px', backgroundColor: '#190750', borderRadius: '12px', fontFamily: 'monospace', fontSize: '14px', color: '#FFF' }}>
+                  Конверсия = (Продажи / Контакты) × 100%
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontWeight: 700, marginBottom: '12px', color: '#190750', fontSize: '14px' }}>Исходные данные:</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px', backgroundColor: '#FAF8FF', borderRadius: '8px' }}>
+                    <span style={{ color: '#666' }}>Всего контактов</span>
+                    <span style={{ fontWeight: 700, color: '#190750' }}>1,247</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px', backgroundColor: '#FAF8FF', borderRadius: '8px' }}>
+                    <span style={{ color: '#666' }}>Успешных продаж</span>
+                    <span style={{ fontWeight: 700, color: '#22C55E' }}>229</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ fontSize: '12px', color: '#999', textAlign: 'center' }}>
+                Источники: AmoCRM API, Asterisk AMI, SMTP
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Простота настройки */}
+      <section id="setup" style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
+            Настройка за <span className="gradient-text">5 минут</span>
+          </h2>
+          <p style={{ fontSize: '18px', color: '#666', marginBottom: '60px', maxWidth: '600px', margin: '0 auto 60px' }}>
+            Без программистов. Без сложных инструкций.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+            {[
+              { step: '1', title: 'Подключите телефонию', desc: 'SIP-аккаунт или API ключ', time: '2 мин' },
+              { step: '2', title: 'Добавьте CRM', desc: 'API токен из AmoCRM или Битрикс24', time: '1 мин' },
+              { step: '3', title: 'Выберите виджеты', desc: 'Готовые дашборды из каталога', time: '1 мин' },
+              { step: '4', title: 'Готово', desc: 'Данные уже поступают', time: '1 мин' },
+            ].map((item, i) => (
+              <div key={i} className="hover-lift" style={{ backgroundColor: '#FFF', borderRadius: '20px', padding: '32px', border: '1px solid rgba(118,67,215,0.1)', position: 'relative' }}>
+                <div style={{ 
+                  position: 'absolute', 
+                  top: '-16px', 
+                  left: '50%', 
+                  transform: 'translateX(-50%)',
+                  width: '32px', 
+                  height: '32px', 
+                  borderRadius: '50%', 
+                  backgroundColor: '#7643d7', 
+                  color: '#FFF', 
+                  fontWeight: 700, 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center' 
+                }}>
+                  {item.step}
+                </div>
+                <div style={{ marginTop: '16px', fontWeight: 700, marginBottom: '8px', color: '#190750' }}>{item.title}</div>
+                <div style={{ fontSize: '14px', color: '#666', marginBottom: '16px' }}>{item.desc}</div>
+                <div style={{ fontSize: '12px', color: '#7643d7', fontWeight: 600 }}>⏱️ {item.time}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Снижение аварийности */}
+      <section style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+            <div>
+              <div style={{ fontSize: '56px', marginBottom: '20px' }}>🛡️</div>
+              <h3 style={{ fontSize: '32px', fontWeight: 800, marginBottom: '20px', color: '#190750' }}>Меньше ночных звонков</h3>
+              <p style={{ fontSize: '17px', color: '#666', lineHeight: 1.8, marginBottom: '24px' }}>
+                ИИ-аналитика находит проблемы до того, как они станут авариями. 
+                Предиктивные алерты о проблемах в коммуникациях — меньше срочных вызовов, спокойнее работа.
+              </p>
+              <div style={{ padding: '24px', backgroundColor: '#7643d7', borderRadius: '16px' }}>
+                <div style={{ fontWeight: 700, marginBottom: '8px', color: '#FFF', fontSize: '14px' }}>Раннее обнаружение</div>
+                <p style={{ color: 'rgba(255,255,255,0.9)', lineHeight: 1.7 }}>
+                  Падение конверсии, рост пропущенных, подозрительные паттерны — 
+                  система уведомит раньше, чем это заметит руководство.
+                </p>
+              </div>
+            </div>
+            <div style={{ backgroundColor: '#FFF', borderRadius: '24px', padding: '40px', border: '1px solid rgba(239,68,68,0.2)', boxShadow: '0 10px 40px rgba(239,68,68,0.08)' }}>
+              <div style={{ fontSize: '13px', color: '#EF4444', marginBottom: '12px', fontWeight: 600 }}>⚠️ Раннее предупреждение</div>
+              <div style={{ padding: '16px', backgroundColor: 'rgba(239,68,68,0.05)', borderRadius: '12px', marginBottom: '16px', border: '1px solid rgba(239,68,68,0.15)' }}>
+                <div style={{ fontSize: '12px', color: '#999', marginBottom: '4px' }}>Обнаружено за 2 часа до аварии</div>
+                <div style={{ fontSize: '14px', color: '#190750' }}>Резкий рост пропущенных вызовов на линии продаж — возможна перегрузка</div>
+              </div>
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <button style={{ flex: 1, padding: '12px', backgroundColor: '#EF4444', border: 'none', borderRadius: '50px', color: '#FFF', fontWeight: 600, cursor: 'pointer' }}>Посмотреть</button>
+                <button style={{ flex: 1, padding: '12px', backgroundColor: 'rgba(239,68,68,0.1)', border: 'none', borderRadius: '50px', color: '#EF4444', fontWeight: 600, cursor: 'pointer' }}>Игнорировать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Игра - виральный элемент */}
+      <section id="game" style={{ padding: '120px 20px', background: 'linear-gradient(180deg, #FFF8E7 0%, #FFF 100%)' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+            <div>
+              <div style={{
+                display: 'inline-block',
+                padding: '10px 24px',
+                borderRadius: '50px',
+                backgroundColor: 'rgba(255,165,0,0.15)',
+                marginBottom: '24px',
+                fontSize: '14px',
+                color: '#FF8C00',
+                fontWeight: 600,
+              }}>
+                🎮 Такого нет ни у кого
+              </div>
+              <h2 style={{ fontSize: '44px', fontWeight: 800, marginBottom: '24px', lineHeight: 1.2, letterSpacing: '-1px', color: '#190750' }}>
+                Игра <span style={{ color: '#FF8C00' }}>«Мёдом намазано»</span>
+              </h2>
+              <p style={{ fontSize: '18px', color: '#666', marginBottom: '32px', lineHeight: 1.7 }}>
+                Уникальный элемент вовлечения. Выиграйте месяц бесплатного использования Контакт.ИИ! 
+                Поделитесь с коллегами — пусть тоже попробуют.
+              </p>
+              <button style={{
+                padding: '18px 40px',
+                borderRadius: '50px',
+                border: 'none',
+                background: 'linear-gradient(90deg, #FFD700, #FFA500)',
+                color: '#190750',
+                fontWeight: 700,
+                fontSize: '17px',
+                cursor: 'pointer',
+                boxShadow: '0 8px 32px rgba(255,165,0,0.3)',
+              }}>
+                Играть бесплатно 🍯
+              </button>
+            </div>
+
+            <div style={{
+              padding: '48px',
+              borderRadius: '32px',
+              background: 'linear-gradient(180deg, rgba(255,165,0,0.08) 0%, #FFF 100%)',
+              border: '2px solid rgba(255,165,0,0.2)',
+              textAlign: 'center',
+            }}>
+              <div className="animate-float" style={{
+                width: '120px',
+                height: '120px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '60px',
+                margin: '0 auto 32px',
+                boxShadow: '0 12px 40px rgba(255,165,0,0.3)',
+              }}>
+                🍯
+              </div>
+              <h3 style={{ fontSize: '32px', fontWeight: 800, marginBottom: '16px', color: '#190750' }}>
+                Мёдом намазано
+              </h3>
+              <div style={{ padding: '24px', backgroundColor: '#190750', borderRadius: '20px', marginBottom: '24px' }}>
+                <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: '8px' }}>Главный приз</div>
+                <div style={{ fontSize: '40px', fontWeight: 800, color: '#FFD700' }}>30 дней</div>
+                <div style={{ fontSize: '16px', color: '#FFF' }}>Контакт.ИИ бесплатно</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ padding: '120px 20px', textAlign: 'center', backgroundColor: '#190750' }}>
+        <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '24px', color: '#FFF' }}>
+          Готовы сэкономить часы работы?
+        </h2>
+        <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', marginBottom: '48px', maxWidth: '500px', margin: '0 auto 48px' }}>
+          14 дней бесплатно. Настройка за 5 минут. Без программистов.
+        </p>
+        <button className="btn-primary animate-glow" style={{
+          padding: '20px 56px',
+          borderRadius: '50px',
+          border: 'none',
+          backgroundColor: '#7643d7',
+          color: '#FFF',
+          fontWeight: 700,
+          fontSize: '18px',
+          cursor: 'pointer',
+          boxShadow: '0 8px 40px rgba(118,67,215,0.5)',
+        }}>
+          Начать бесплатно
+        </button>
+        <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center', gap: '32px', color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
+          <span>✓ Интеграция с Asterisk</span>
+          <span>✓ Открытые формулы</span>
+          <span>✓ Настройка за 5 минут</span>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ padding: '60px 20px', borderTop: '1px solid rgba(118,67,215,0.1)', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px' }}>
+          <div>
+            <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7', marginBottom: '16px' }}>
+              Контакт.ИИ
+            </div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.6 }}>
+              Платформа роста выручки через коммуникации.
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Продукт</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>Витрина виджетов</div>
+              <div>ИИ-ассистент</div>
+              <div>Транскрибация</div>
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Интеграции</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>Asterisk</div>
+              <div>AmoCRM</div>
+              <div>Битрикс24</div>
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Контакты</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>📞 8 800 123-45-67</div>
+              <div>📧 info@contact-ai.ru</div>
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', color: '#999', fontSize: '12px', marginTop: '40px' }}>
+          © 2026 Контакт.ИИ. Все права защищены.
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+// ============================================
 // ГЛАВНЫЙ КОМПОНЕНТ С ПЕРЕКЛЮЧАТЕЛЕМ
 // ============================================
 export default function Landing() {
   const [concept, setConcept] = useState(1)
+
+  const conceptNames: Record<number, { short: string; full: string }> = {
+    1: { short: 'Хуки', full: 'Кратко • Цепляющие хуки' },
+    2: { short: 'Детально', full: 'Развёрнуто • Подробно' },
+    3: { short: 'Руководителю', full: 'Для рекомендации руководителю' },
+    4: { short: 'Коллеге', full: 'Для рекомендации коллеге' },
+  }
 
   return (
     <div style={{ position: 'relative' }}>
@@ -1302,40 +2011,33 @@ export default function Landing() {
         <div style={{ marginBottom: '12px', fontSize: '12px', fontWeight: 700, color: '#190750', textAlign: 'center' }}>
           Концепт лендинга
         </div>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <button onClick={() => setConcept(1)} style={{
-            padding: '12px 24px',
-            borderRadius: '50px',
-            border: 'none',
-            backgroundColor: concept === 1 ? '#7643d7' : '#FAF8FF',
-            color: concept === 1 ? '#FFF' : '#190750',
-            fontWeight: 600,
-            cursor: 'pointer',
-            fontSize: '13px',
-            transition: 'all 0.3s ease',
-          }}>
-            Хуки
-          </button>
-          <button onClick={() => setConcept(2)} style={{
-            padding: '12px 24px',
-            borderRadius: '50px',
-            border: 'none',
-            backgroundColor: concept === 2 ? '#7643d7' : '#FAF8FF',
-            color: concept === 2 ? '#FFF' : '#190750',
-            fontWeight: 600,
-            cursor: 'pointer',
-            fontSize: '13px',
-            transition: 'all 0.3s ease',
-          }}>
-            Детально
-          </button>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+          {[1, 2, 3, 4].map((c) => (
+            <button key={c} onClick={() => setConcept(c)} style={{
+              padding: '12px 20px',
+              borderRadius: '50px',
+              border: 'none',
+              backgroundColor: concept === c ? '#7643d7' : '#FAF8FF',
+              color: concept === c ? '#FFF' : '#190750',
+              fontWeight: 600,
+              cursor: 'pointer',
+              fontSize: '13px',
+              transition: 'all 0.3s ease',
+              whiteSpace: 'nowrap',
+            }}>
+              {conceptNames[c].short}
+            </button>
+          ))}
         </div>
         <div style={{ marginTop: '8px', fontSize: '11px', color: '#999', textAlign: 'center' }}>
-          {concept === 1 ? 'Кратко • Цепляющие хуки' : 'Развёрнуто • Подробно'}
+          {conceptNames[concept].full}
         </div>
       </div>
 
-      {concept === 1 ? <LandingConcept1 /> : <LandingConcept2 />}
+      {concept === 1 && <LandingConcept1 />}
+      {concept === 2 && <LandingConcept2 />}
+      {concept === 3 && <LandingConcept3 />}
+      {concept === 4 && <LandingConcept4 />}
     </div>
   )
 }
