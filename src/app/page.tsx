@@ -2120,7 +2120,7 @@ function LandingConcept5() {
             border: '1px solid rgba(118,67,215,0.1)',
           }}>
             <img 
-              src="/download/contact_ai_ipad_dashboard.png" 
+              src="/contact_ai_ipad_dashboard.png" 
               alt="Интерфейс Контакт.ИИ на iPad — светофор метрик, виджеты и планировщик встреч"
               style={{
                 width: '100%',
@@ -2607,7 +2607,7 @@ function LandingConcept5() {
             border: '1px solid rgba(118,67,215,0.1)',
           }}>
             <img 
-              src="/download/contact_ai_widgets.png" 
+              src="/contact_ai_widgets.png" 
               alt="Примеры виджетов Контакт.ИИ — рост выручки, конверсия, рейтинг команды, светофор, планировщик, омниканальность"
               style={{
                 width: '100%',
