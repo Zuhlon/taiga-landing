@@ -2319,12 +2319,12 @@ function LandingConcept5() {
           Платформа для администраторов, руководителей и сотрудников.
         </p>
         
-        {/* Кнопки */}
+        {/* Кнопка */}
         <div 
           id="hero-cta-group"
           data-ym-area="cta-buttons"
-          data-ym-name="Кнопки действия (Hero)"
-          style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '60px' }}>
+          data-ym-name="Кнопка действия (Hero)"
+          style={{ display: 'flex', justifyContent: 'center', marginBottom: '60px' }}>
           <button 
             id="hero-cta-primary"
             data-ym-click-type="button"
@@ -2347,28 +2347,6 @@ function LandingConcept5() {
               boxShadow: '0 8px 30px rgba(34,197,94,0.35)',
             }}>
             Пригласить коллегу в КонтактИИ
-          </button>
-          <button 
-            id="hero-cta-secondary"
-            data-ym-click-type="button"
-            data-ym-name="Кнопка: Пригласить коллегу (вторичная)"
-            data-ym-goal-id="invite_colleague_secondary"
-            className="hover-lift" 
-            onClick={() => {
-              const modal = document.getElementById('workspace-modal');
-              if (modal) modal.style.display = 'flex';
-            }}
-            style={{
-              padding: '18px 40px',
-              borderRadius: '50px',
-              border: '2px solid #7643d7',
-              backgroundColor: 'transparent',
-              color: '#7643d7',
-              fontWeight: 600,
-              fontSize: '17px',
-              cursor: 'pointer',
-            }}>
-            Пригласить коллегу
           </button>
         </div>
 
@@ -3104,16 +3082,16 @@ function LandingConcept5() {
                 Уникальный элемент вовлечения. Выиграйте месяц бесплатного использования Контакт.ИИ! 
                 Поделитесь с коллегами — пусть тоже попробуют.
               </p>
-              <button 
+              <a 
+                href="https://bee-call-center.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 id="game-cta"
                 data-ym-click-type="button"
-                data-ym-name="Кнопка: Пригласить коллегу (игра)"
-                data-ym-goal-id="invite_colleague_game"
-                onClick={() => {
-                  const modal = document.getElementById('workspace-modal');
-                  if (modal) modal.style.display = 'flex';
-                }}
+                data-ym-name="Кнопка: Открыть игру"
+                data-ym-goal-id="open_game"
                 style={{
+                  display: 'inline-block',
                   padding: '18px 40px',
                   borderRadius: '50px',
                   border: 'none',
@@ -3123,9 +3101,10 @@ function LandingConcept5() {
                   fontSize: '17px',
                   cursor: 'pointer',
                   boxShadow: '0 8px 32px rgba(255,165,0,0.3)',
+                  textDecoration: 'none',
               }}>
-                Пригласить коллегу в КонтактИИ
-              </button>
+                Открыть игру!
+              </a>
             </div>
 
             <div style={{
