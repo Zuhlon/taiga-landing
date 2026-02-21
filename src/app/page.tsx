@@ -2950,6 +2950,723 @@ function LandingConcept5() {
     </div>
   )
 }
+
+
+// ============================================
+// КОНЦЕПТ 6: Юзер флоу дерева принятия решения поделиться информацией
+// Основан на общих для людей паттернах поведения
+// ============================================
+function LandingConcept6() {
+  return (
+    <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', color: '#190750' }}>
+      <style>{styles}</style>
+      
+      {/* Header */}
+      <header style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        padding: '16px 40px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: 'rgba(255,255,255,0.98)',
+        backdropFilter: 'blur(10px)',
+        zIndex: 100,
+        borderBottom: '1px solid rgba(118,67,215,0.1)',
+      }}>
+        <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7' }}>
+          Контакт.ИИ
+        </div>
+        <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+          <a href="#flow" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Юзер флоу</a>
+          <a href="#motivations" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Мотивации</a>
+          <a href="#recipients" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Получатели</a>
+          <a href="#application" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Применение</a>
+          <button className="btn-primary" style={{
+            padding: '12px 28px',
+            borderRadius: '50px',
+            border: 'none',
+            backgroundColor: '#7643d7',
+            color: '#FFF',
+            fontWeight: 600,
+            cursor: 'pointer',
+            boxShadow: '0 4px 20px rgba(118,67,215,0.3)',
+          }}>
+            Начать бесплатно
+          </button>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <section style={{
+        paddingTop: '140px',
+        paddingBottom: '60px',
+        textAlign: 'center',
+        background: 'linear-gradient(180deg, #FAF8FF 0%, #FFFFFF 100%)',
+      }}>
+        <div style={{
+          display: 'inline-block',
+          padding: '14px 36px',
+          borderRadius: '60px',
+          background: 'linear-gradient(90deg, #7643d7, #9b6dff)',
+          marginBottom: '32px',
+          fontSize: '17px',
+          color: '#FFF',
+          fontWeight: 700,
+          boxShadow: '0 8px 32px rgba(118,67,215,0.3)',
+        }}>
+          🧠 Психология шаринга информации
+        </div>
+        
+        <h1 style={{
+          fontSize: '52px',
+          fontWeight: 800,
+          lineHeight: 1.15,
+          marginBottom: '24px',
+          maxWidth: '900px',
+          margin: '0 auto 24px',
+          letterSpacing: '-2px',
+        }}>
+          Почему люди <span className="gradient-text">делятся информацией</span> с другими?
+        </h1>
+        
+        <p style={{
+          fontSize: '20px',
+          color: '#666',
+          maxWidth: '700px',
+          margin: '0 auto 40px',
+          lineHeight: 1.7,
+        }}>
+          Понимание паттернов поведения поможет создать контент, 
+          которым люди захотят поделиться с коллегами и руководством.
+        </p>
+      </section>
+
+      {/* ДЕРЕВО РЕШЕНИЙ - Визуализация */}
+      <section id="flow" style={{ padding: '60px 20px 120px', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          
+          {/* Уровень 0: Старт */}
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <div style={{
+              display: 'inline-block',
+              padding: '24px 48px',
+              backgroundColor: '#190750',
+              borderRadius: '24px',
+              color: '#FFF',
+              fontSize: '20px',
+              fontWeight: 700,
+              boxShadow: '0 12px 40px rgba(25, 7, 80, 0.3)',
+            }}>
+              🎯 Человек получает информацию
+            </div>
+          </div>
+
+          {/* Стрелка вниз */}
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <div style={{ fontSize: '32px', color: '#7643d7' }}>↓</div>
+          </div>
+
+          {/* Уровень 1: Оценка полезности */}
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <div style={{
+              display: 'inline-block',
+              padding: '20px 40px',
+              backgroundColor: '#FAF8FF',
+              borderRadius: '20px',
+              border: '2px solid #7643d7',
+              fontSize: '18px',
+              fontWeight: 700,
+              color: '#190750',
+            }}>
+              🤔 Оценка: Полезно ли это?
+            </div>
+            
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginTop: '40px' }}>
+              {/* Нет */}
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '28px', color: '#999', marginBottom: '12px' }}>←</div>
+                <div style={{
+                  padding: '16px 32px',
+                  backgroundColor: '#F5F5F5',
+                  borderRadius: '16px',
+                  fontSize: '15px',
+                  color: '#999',
+                }}>
+                  ❌ Нет → Игнорирует
+                </div>
+              </div>
+              
+              {/* Да */}
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '28px', color: '#22C55E', marginBottom: '12px' }}>↓</div>
+                <div style={{
+                  padding: '16px 32px',
+                  backgroundColor: 'rgba(34,197,94,0.1)',
+                  borderRadius: '16px',
+                  fontSize: '15px',
+                  fontWeight: 700,
+                  color: '#22C55E',
+                }}>
+                  ✓ Да, полезно!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Уровень 2: Мотивации */}
+          <div id="motivations" style={{ marginBottom: '80px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <h2 style={{ fontSize: '36px', fontWeight: 800, color: '#190750' }}>
+                Какая <span className="gradient-text">мотивация</span> движет человеком?
+              </h2>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px' }}>
+              {[
+                { 
+                  icon: '🏆', 
+                  title: 'Статус', 
+                  desc: 'Показать экспертность',
+                  color: '#FFD700',
+                  detail: '«Я знаю что-то полезное»'
+                },
+                { 
+                  icon: '🤝', 
+                  title: 'Альтруизм', 
+                  desc: 'Помочь другим',
+                  color: '#22C55E',
+                  detail: '«Это поможет коллеге»'
+                },
+                { 
+                  icon: '🔄', 
+                  title: 'Взаимность', 
+                  desc: 'Ожидание ответа',
+                  color: '#3B82F6',
+                  detail: '«Мне тоже помогут»'
+                },
+                { 
+                  icon: '💬', 
+                  title: 'Связь', 
+                  desc: 'Укрепить отношения',
+                  color: '#7643d7',
+                  detail: '«Хочу быть полезным»'
+                },
+                { 
+                  icon: '✨', 
+                  title: 'Самоутверждение', 
+                  desc: 'Чувство важности',
+                  color: '#FF6B35',
+                  detail: '«Я приношу пользу»'
+                },
+              ].map((m, i) => (
+                <div key={i} className="hover-lift" style={{
+                  backgroundColor: '#FFF',
+                  borderRadius: '20px',
+                  padding: '28px 20px',
+                  border: `2px solid ${m.color}30`,
+                  textAlign: 'center',
+                }}>
+                  <div style={{ fontSize: '40px', marginBottom: '16px' }}>{m.icon}</div>
+                  <div style={{ fontSize: '18px', fontWeight: 800, marginBottom: '8px', color: '#190750' }}>{m.title}</div>
+                  <div style={{ fontSize: '14px', color: '#666', marginBottom: '16px' }}>{m.desc}</div>
+                  <div style={{
+                    padding: '10px 16px',
+                    backgroundColor: `${m.color}15`,
+                    borderRadius: '10px',
+                    fontSize: '13px',
+                    color: m.color,
+                    fontWeight: 600,
+                  }}>
+                    {m.detail}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Уровень 3: Выбор получателя */}
+          <div id="recipients" style={{ marginBottom: '80px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <div style={{ fontSize: '32px', color: '#7643d7', marginBottom: '20px' }}>↓</div>
+              <h2 style={{ fontSize: '36px', fontWeight: 800, color: '#190750' }}>
+                Кому <span className="gradient-text">поделиться</span>?
+              </h2>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px' }}>
+              
+              {/* Руководитель */}
+              <div style={{
+                backgroundColor: '#FAF8FF',
+                borderRadius: '24px',
+                padding: '32px',
+                border: '2px solid rgba(34,197,94,0.3)',
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+                  <div style={{
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '50%',
+                    backgroundColor: '#22C55E',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '40px',
+                    margin: '0 auto 16px',
+                  }}>
+                    👔
+                  </div>
+                  <div style={{ fontSize: '24px', fontWeight: 800, color: '#190750' }}>Руководителю</div>
+                </div>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#22C55E' }}>✓</span>
+                    <span>Показать свою компетентность</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#22C55E' }}>✓</span>
+                    <span>Внести вклад в успех команды</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#22C55E' }}>✓</span>
+                    <span>Рассчитывать на признание</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#22C55E' }}>✓</span>
+                    <span>Продемонстрировать инициативу</span>
+                  </div>
+                </div>
+                
+                <div style={{
+                  padding: '16px',
+                  backgroundColor: '#22C55E',
+                  borderRadius: '12px',
+                  textAlign: 'center',
+                  color: '#FFF',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                }}>
+                  Цель: Карьерный рост, признание
+                </div>
+              </div>
+
+              {/* Коллега */}
+              <div style={{
+                backgroundColor: '#FAF8FF',
+                borderRadius: '24px',
+                padding: '32px',
+                border: '2px solid rgba(59,130,246,0.3)',
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+                  <div style={{
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '50%',
+                    backgroundColor: '#3B82F6',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '40px',
+                    margin: '0 auto 16px',
+                  }}>
+                    🤝
+                  </div>
+                  <div style={{ fontSize: '24px', fontWeight: 800, color: '#190750' }}>Коллеге</div>
+                </div>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#3B82F6' }}>✓</span>
+                    <span>Помочь решить проблему</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#3B82F6' }}>✓</span>
+                    <span>Укрепить профессиональную связь</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#3B82F6' }}>✓</span>
+                    <span>Создать «кредит доверия»</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#3B82F6' }}>✓</span>
+                    <span>Поделиться находкой</span>
+                  </div>
+                </div>
+                
+                <div style={{
+                  padding: '16px',
+                  backgroundColor: '#3B82F6',
+                  borderRadius: '12px',
+                  textAlign: 'center',
+                  color: '#FFF',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                }}>
+                  Цель: Взаимопомощь, партнерство
+                </div>
+              </div>
+
+              {/* Друг/Знакомый */}
+              <div style={{
+                backgroundColor: '#FAF8FF',
+                borderRadius: '24px',
+                padding: '32px',
+                border: '2px solid rgba(118,67,215,0.3)',
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+                  <div style={{
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '50%',
+                    backgroundColor: '#7643d7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '40px',
+                    margin: '0 auto 16px',
+                  }}>
+                    👥
+                  </div>
+                  <div style={{ fontSize: '24px', fontWeight: 800, color: '#190750' }}>Другу / Знакомому</div>
+                </div>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#7643d7' }}>✓</span>
+                    <span>Быть полезным</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#7643d7' }}>✓</span>
+                    <span>Поддержать отношения</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#7643d7' }}>✓</span>
+                    <span>Поделиться интересным</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
+                    <span style={{ color: '#7643d7' }}>✓</span>
+                    <span>Начать диалог</span>
+                  </div>
+                </div>
+                
+                <div style={{
+                  padding: '16px',
+                  backgroundColor: '#7643d7',
+                  borderRadius: '12px',
+                  textAlign: 'center',
+                  color: '#FFF',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                }}>
+                  Цель: Личная связь, дружба
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Уровень 4: Форма передачи */}
+          <div style={{ marginBottom: '80px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <div style={{ fontSize: '32px', color: '#7643d7', marginBottom: '20px' }}>↓</div>
+              <h2 style={{ fontSize: '36px', fontWeight: 800, color: '#190750' }}>
+                Как <span className="gradient-text">передать</span> информацию?
+              </h2>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+              {[
+                { icon: '🔗', title: 'Переслать ссылку', desc: 'Быстро, минимальные усилия', timing: 'Секунды' },
+                { icon: '💬', title: 'Рассказать лично', desc: 'Более убедительно', timing: 'Минуты' },
+                { icon: '🖥️', title: 'Показать на экране', desc: 'Наглядная демонстрация', timing: '5-10 минут' },
+                { icon: '📧', title: 'Написать сообщение', desc: 'С контекстом и пояснением', timing: 'Минуты' },
+              ].map((f, i) => (
+                <div key={i} className="hover-lift" style={{
+                  backgroundColor: '#FAF8FF',
+                  borderRadius: '20px',
+                  padding: '28px',
+                  textAlign: 'center',
+                  border: '1px solid rgba(118,67,215,0.1)',
+                }}>
+                  <div style={{ fontSize: '40px', marginBottom: '16px' }}>{f.icon}</div>
+                  <div style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: '#190750' }}>{f.title}</div>
+                  <div style={{ fontSize: '14px', color: '#666', marginBottom: '16px' }}>{f.desc}</div>
+                  <div style={{
+                    display: 'inline-block',
+                    padding: '6px 16px',
+                    backgroundColor: 'rgba(118,67,215,0.1)',
+                    borderRadius: '50px',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    color: '#7643d7',
+                  }}>
+                    ⏱️ {f.timing}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Уровень 5: Результат */}
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '32px', color: '#22C55E', marginBottom: '20px' }}>↓</div>
+            <div style={{
+              display: 'inline-block',
+              padding: '32px 60px',
+              background: 'linear-gradient(135deg, #22C55E 0%, #16A34A 100%)',
+              borderRadius: '24px',
+              color: '#FFF',
+              boxShadow: '0 12px 40px rgba(34,197,94,0.3)',
+            }}>
+              <div style={{ fontSize: '24px', fontWeight: 800, marginBottom: '12px' }}>🎉 Результат шаринга</div>
+              <div style={{ display: 'flex', gap: '32px', justifyContent: 'center', fontSize: '16px' }}>
+                <span>✓ Признание</span>
+                <span>✓ Благодарность</span>
+                <span>✓ Укрепление связей</span>
+                <span>✓ Ответная помощь</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Применение к Контакт.ИИ */}
+      <section id="application" style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <div style={{
+              display: 'inline-block',
+              padding: '12px 28px',
+              borderRadius: '50px',
+              backgroundColor: 'rgba(118,67,215,0.1)',
+              marginBottom: '24px',
+              fontSize: '15px',
+              color: '#7643d7',
+              fontWeight: 700,
+            }}>
+              🎯 Применение к Контакт.ИИ
+            </div>
+            <h2 style={{ fontSize: '44px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
+              Как создать контент, которым <span className="gradient-text">захотят делиться</span>
+            </h2>
+            <p style={{ fontSize: '18px', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
+              Используйте понимание мотиваций для создания эффективного лендинга
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px' }}>
+            
+            {/* Для рекомендации руководителю */}
+            <div style={{
+              backgroundColor: '#FFF',
+              borderRadius: '24px',
+              padding: '40px',
+              border: '1px solid rgba(34,197,94,0.2)',
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                marginBottom: '24px',
+              }}>
+                <div style={{
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: '50%',
+                  backgroundColor: '#22C55E',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '28px',
+                }}>
+                  👔
+                </div>
+                <div>
+                  <div style={{ fontSize: '20px', fontWeight: 800, color: '#190750' }}>Для рекомендации руководителю</div>
+                  <div style={{ fontSize: '14px', color: '#666' }}>Мотивация: Статус, Карьера</div>
+                </div>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ padding: '16px', backgroundColor: '#FAF8FF', borderRadius: '12px' }}>
+                  <div style={{ fontWeight: 700, marginBottom: '8px', color: '#22C55E', fontSize: '14px' }}>Что должен видеть админ:</div>
+                  <ul style={{ fontSize: '14px', color: '#666', lineHeight: 1.8, paddingLeft: '20px', margin: 0 }}>
+                    <li>Конкретные цифры ROI для бизнеса</li>
+                    <li>Сравнение до/после внедрения</li>
+                    <li>Отраслевые кейсы</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '16px', backgroundColor: '#FAF8FF', borderRadius: '12px' }}>
+                  <div style={{ fontWeight: 700, marginBottom: '8px', color: '#22C55E', fontSize: '14px' }}>Что админ сможет сказать:</div>
+                  <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>
+                    «Я нашёл решение, которое может увеличить нашу выручку на 340%. Вот расчёт ROI и кейсы из нашей отрасли.»
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Для рекомендации коллеге */}
+            <div style={{
+              backgroundColor: '#FFF',
+              borderRadius: '24px',
+              padding: '40px',
+              border: '1px solid rgba(59,130,246,0.2)',
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                marginBottom: '24px',
+              }}>
+                <div style={{
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: '50%',
+                  backgroundColor: '#3B82F6',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '28px',
+                }}>
+                  🤝
+                </div>
+                <div>
+                  <div style={{ fontSize: '20px', fontWeight: 800, color: '#190750' }}>Для рекомендации коллеге</div>
+                  <div style={{ fontSize: '14px', color: '#666' }}>Мотивация: Помощь, Взаимность</div>
+                </div>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ padding: '16px', backgroundColor: '#FAF8FF', borderRadius: '12px' }}>
+                  <div style={{ fontWeight: 700, marginBottom: '8px', color: '#3B82F6', fontSize: '14px' }}>Что должен видеть админ:</div>
+                  <ul style={{ fontSize: '14px', color: '#666', lineHeight: 1.8, paddingLeft: '20px', margin: 0 }}>
+                    <li>Простота настройки (5 минут)</li>
+                    <li>Открытые формулы и прозрачность</li>
+                    <li>Интеграции с их системами</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '16px', backgroundColor: '#FAF8FF', borderRadius: '12px' }}>
+                  <div style={{ fontWeight: 700, marginBottom: '8px', color: '#3B82F6', fontSize: '14px' }}>Что админ сможет сказать:</div>
+                  <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>
+                    «Смотри, нашёл штуку, которая сэкономит тебе часы работы. Настройка за 5 минут, все формулы открыты. Попробуй, мне помогло.»
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Ключевые принципы */}
+          <div style={{ marginTop: '60px' }}>
+            <h3 style={{ fontSize: '28px', fontWeight: 800, textAlign: 'center', marginBottom: '32px', color: '#190750' }}>
+              Ключевые принципы виральности
+            </h3>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+              {[
+                { icon: '💎', title: 'Польза', desc: 'Контент должен решать реальную проблему' },
+                { icon: '🎯', title: 'Релевантность', desc: 'Соответствие интересам получателя' },
+                { icon: '⚡', title: 'Простота', desc: 'Легко переслать за 1 клик' },
+                { icon: '🏆', title: 'Социальный капитал', desc: 'Дарит статус тому, кто делится' },
+              ].map((p, i) => (
+                <div key={i} style={{
+                  backgroundColor: '#FFF',
+                  borderRadius: '16px',
+                  padding: '24px',
+                  textAlign: 'center',
+                  border: '1px solid rgba(118,67,215,0.1)',
+                }}>
+                  <div style={{ fontSize: '32px', marginBottom: '12px' }}>{p.icon}</div>
+                  <div style={{ fontWeight: 700, marginBottom: '8px', color: '#190750' }}>{p.title}</div>
+                  <div style={{ fontSize: '13px', color: '#666' }}>{p.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ padding: '120px 20px', textAlign: 'center', backgroundColor: '#190750' }}>
+        <h2 style={{ fontSize: '44px', fontWeight: 800, marginBottom: '24px', color: '#FFF' }}>
+          Создайте контент, которым захотят делиться
+        </h2>
+        <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', marginBottom: '48px', maxWidth: '600px', margin: '0 auto 48px' }}>
+          Используйте понимание психологии шаринга для создания эффективного лендинга
+        </p>
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+          <button className="btn-primary animate-glow" style={{
+            padding: '20px 50px',
+            borderRadius: '50px',
+            border: 'none',
+            backgroundColor: '#7643d7',
+            color: '#FFF',
+            fontWeight: 700,
+            fontSize: '18px',
+            cursor: 'pointer',
+            boxShadow: '0 8px 40px rgba(118,67,215,0.5)',
+          }}>
+            Начать бесплатно
+          </button>
+          <button className="hover-lift" style={{
+            padding: '20px 50px',
+            borderRadius: '50px',
+            border: '2px solid rgba(255,255,255,0.3)',
+            backgroundColor: 'transparent',
+            color: '#FFF',
+            fontWeight: 700,
+            fontSize: '18px',
+            cursor: 'pointer',
+          }}>
+            Узнать больше
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ padding: '60px 20px', borderTop: '1px solid rgba(118,67,215,0.1)', backgroundColor: '#FFF' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px' }}>
+          <div>
+            <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7', marginBottom: '16px' }}>
+              Контакт.ИИ
+            </div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.6 }}>
+              Платформа роста выручки через коммуникации.
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Продукт</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>Витрина виджетов</div>
+              <div>ИИ-ассистент</div>
+              <div>Транскрибация</div>
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Компания</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>О нас</div>
+              <div>Карьера</div>
+              <div>Блог</div>
+            </div>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Контакты</div>
+            <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
+              <div>📞 8 800 123-45-67</div>
+              <div>📧 info@contact-ai.ru</div>
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', color: '#999', fontSize: '12px', marginTop: '40px' }}>
+          © 2026 Контакт.ИИ. Все права защищены.
+        </div>
+      </footer>
+    </div>
+  )
+}
 // ГЛАВНЫЙ КОМПОНЕНТ С ПЕРЕКЛЮЧАТЕЛЕМ
 // ============================================
 export default function Landing() {
@@ -2961,6 +3678,7 @@ export default function Landing() {
     3: { short: 'Руководителю', full: 'Для рекомендации руководителю' },
     4: { short: 'Коллеге', full: 'Для рекомендации коллеге' },
     5: { short: 'Объединённый', full: 'Детально + Все аудитории' },
+    6: { short: 'Юзер флоу', full: 'Психология шаринга информации' },
   }
 
   return (
@@ -2981,7 +3699,7 @@ export default function Landing() {
           Концепт лендинга
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
-          {[1, 2, 3, 4, 5].map((c) => (
+          {[1, 2, 3, 4, 5, 6].map((c) => (
             <button key={c} onClick={() => setConcept(c)} style={{
               padding: '12px 16px',
               borderRadius: '50px',
@@ -3008,6 +3726,7 @@ export default function Landing() {
       {concept === 3 && <LandingConcept3 />}
       {concept === 4 && <LandingConcept4 />}
       {concept === 5 && <LandingConcept5 />}
+      {concept === 6 && <LandingConcept6 />}
     </div>
   )
 }
