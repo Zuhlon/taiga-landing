@@ -114,15 +114,49 @@ const styles = `
 `
 
 // ============================================
-// КОНЦЕПТ 1: Краткие цепляющие хуки
+// КОНЦЕПТ 1: Краткие цепляющие хуки (с микроразметкой для Яндекс.Метрики)
 // ============================================
 function LandingConcept1() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', color: '#190750' }}>
       <style>{styles}</style>
       
+      {/* Яндекс.Метрика: Код счётчика с веб-визором */}
+      {/* Замените XXXXXXXX на номер вашего счётчика */}
+      <script
+        id="yandex-metrika-config"
+        type="text/javascript"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            // ЗАМЕНИТЕ XXXXXXXX НА НОМЕР ВАШЕГО СЧЁТЧИКА
+            ym('XXXXXXXX', 'init', {
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true,
+              webvisor: true,
+              trackHash: true,
+              ecommerce: "dataLayer"
+            });
+          `
+        }}
+      />
+      
+      {/* Микроразметка для веб-визора: невидимые инпуты для отслеживания состояний */}
+      <input type="hidden" id="ym-concept" value="hooks" />
+      <input type="hidden" id="ym-page-type" value="landing" />
+      
       {/* Header */}
-      <header style={{
+      <header 
+        id="header"
+        data-ym-area="header"
+        data-ym-name="Шапка сайта"
+        style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -136,37 +170,72 @@ function LandingConcept1() {
         zIndex: 100,
         borderBottom: '1px solid rgba(118,67,215,0.1)',
       }}>
-        <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7' }}>
+        <div 
+          id="logo"
+          data-ym-click-type="navigation"
+          data-ym-name="Логотип"
+          style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7' }}>
           Контакт.ИИ
         </div>
         <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-          <a href="#features" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Возможности</a>
-          <a href="#revenue" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Рост выручки</a>
-          <a href="#pricing" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Тарифы</a>
-          <button className="btn-primary" style={{
-            padding: '12px 28px',
-            borderRadius: '50px',
-            border: 'none',
-            backgroundColor: '#7643d7',
-            color: '#FFF',
-            fontWeight: 600,
-            cursor: 'pointer',
-            fontSize: '15px',
-            boxShadow: '0 4px 20px rgba(118,67,215,0.3)',
-          }}>
+          <a 
+            href="#features" 
+            id="nav-features"
+            data-ym-click-type="navigation"
+            data-ym-name="Ссылка: Возможности"
+            className="hover-lift" 
+            style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Возможности</a>
+          <a 
+            href="#revenue" 
+            id="nav-revenue"
+            data-ym-click-type="navigation"
+            data-ym-name="Ссылка: Рост выручки"
+            className="hover-lift" 
+            style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Рост выручки</a>
+          <a 
+            href="#pricing" 
+            id="nav-pricing"
+            data-ym-click-type="navigation"
+            data-ym-name="Ссылка: Тарифы"
+            className="hover-lift" 
+            style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Тарифы</a>
+          <button 
+            id="header-cta"
+            data-ym-click-type="button"
+            data-ym-name="Кнопка: Начать бесплатно (шапка)"
+            data-ym-goal-id="start_free_header"
+            className="btn-primary" 
+            style={{
+              padding: '12px 28px',
+              borderRadius: '50px',
+              border: 'none',
+              backgroundColor: '#7643d7',
+              color: '#FFF',
+              fontWeight: 600,
+              cursor: 'pointer',
+              fontSize: '15px',
+              boxShadow: '0 4px 20px rgba(118,67,215,0.3)',
+            }}>
             Начать бесплатно
           </button>
         </nav>
       </header>
 
       {/* Hero */}
-      <section style={{
+      <section 
+        id="hero-section"
+        data-ym-area="hero"
+        data-ym-name="Главный экран"
+        style={{
         paddingTop: '160px',
         paddingBottom: '80px',
         textAlign: 'center',
         background: 'linear-gradient(180deg, #FAF8FF 0%, #FFFFFF 100%)',
       }}>
-        <div style={{
+        <div 
+          id="hero-badge"
+          data-ym-name="Бейдж: Платформа роста выручки"
+          style={{
           display: 'inline-block',
           padding: '10px 24px',
           borderRadius: '50px',
@@ -179,7 +248,10 @@ function LandingConcept1() {
           📈 Платформа роста выручки через коммуникации
         </div>
         
-        <h1 style={{
+        <h1 
+          id="hero-headline"
+          data-ym-name="Заголовок: Продажи начинаются в разговоре"
+          style={{
           fontSize: '68px',
           fontWeight: 800,
           lineHeight: 1.1,
@@ -191,7 +263,10 @@ function LandingConcept1() {
           Продажи начинаются <span className="gradient-text">в разговоре</span>
         </h1>
         
-        <p style={{
+        <p 
+          id="hero-subtitle"
+          data-ym-name="Подзаголовок"
+          style={{
           fontSize: '22px',
           color: '#666',
           maxWidth: '650px',
@@ -201,54 +276,86 @@ function LandingConcept1() {
           ИИ, который увеличивает выручку, а не отчёты. Превращает каждый контакт с клиентом в управляемый источник продаж.
         </p>
         
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-          <button className="btn-primary" style={{
-            padding: '18px 40px',
-            borderRadius: '50px',
-            border: 'none',
-            backgroundColor: '#7643d7',
-            color: '#FFF',
-            fontWeight: 600,
-            fontSize: '17px',
-            cursor: 'pointer',
-            boxShadow: '0 8px 30px rgba(118,67,215,0.35)',
-          }}>
+        <div 
+          id="hero-cta-group"
+          data-ym-area="cta-buttons"
+          data-ym-name="Кнопки действия"
+          style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+          <button 
+            id="hero-cta-primary"
+            data-ym-click-type="button"
+            data-ym-name="Кнопка: Попробовать 14 дней бесплатно"
+            data-ym-goal-id="start_free_hero"
+            className="btn-primary" 
+            style={{
+              padding: '18px 40px',
+              borderRadius: '50px',
+              border: 'none',
+              backgroundColor: '#7643d7',
+              color: '#FFF',
+              fontWeight: 600,
+              fontSize: '17px',
+              cursor: 'pointer',
+              boxShadow: '0 8px 30px rgba(118,67,215,0.35)',
+            }}>
             Попробовать 14 дней бесплатно
           </button>
-          <button className="hover-lift" style={{
-            padding: '18px 40px',
-            borderRadius: '50px',
-            border: '2px solid #7643d7',
-            backgroundColor: 'transparent',
-            color: '#7643d7',
-            fontWeight: 600,
-            fontSize: '17px',
-            cursor: 'pointer',
-          }}>
+          <button 
+            id="hero-cta-secondary"
+            data-ym-click-type="button"
+            data-ym-name="Кнопка: Смотреть демо"
+            className="hover-lift" 
+            style={{
+              padding: '18px 40px',
+              borderRadius: '50px',
+              border: '2px solid #7643d7',
+              backgroundColor: 'transparent',
+              color: '#7643d7',
+              fontWeight: 600,
+              fontSize: '17px',
+              cursor: 'pointer',
+            }}>
             Смотреть демо
           </button>
         </div>
 
-        <div style={{ marginTop: '80px' }}>
+        {/* Социальное доказательство */}
+        <div 
+          id="social-proof"
+          data-ym-area="social-proof"
+          data-ym-name="Социальное доказательство"
+          style={{ marginTop: '80px' }}>
           <p style={{ color: '#999', marginBottom: '24px', fontSize: '14px', fontWeight: 500 }}>Нам доверяют лидеры рынка</p>
           <div style={{ display: 'flex', gap: '48px', justifyContent: 'center', opacity: 0.6 }}>
             {['МОС-регистратор', 'АвтоСпецЦентр', 'Телеком Про', 'МедЦентр', 'FinTech'].map((name, i) => (
-              <span key={i} style={{ fontSize: '16px', fontWeight: 600, color: '#190750' }}>{name}</span>
+              <span 
+                key={i}
+                data-ym-name={`Клиент: ${name}`}
+                style={{ fontSize: '16px', fontWeight: 600, color: '#190750' }}>{name}</span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section style={{ padding: '80px 20px', backgroundColor: '#7643d7' }}>
+      {/* Stats - Статистика */}
+      <section 
+        id="stats-section"
+        data-ym-area="stats"
+        data-ym-name="Блок статистики"
+        style={{ padding: '80px 20px', backgroundColor: '#7643d7' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', textAlign: 'center' }}>
           {[
-            { value: '340%', label: 'Рост выручки за 3 месяца' },
-            { value: '+18%', label: 'Конверсия продаж' },
-            { value: '30 сек', label: 'До инсайта' },
-            { value: '5 мин', label: 'На настройку' },
+            { value: '340%', label: 'Рост выручки за 3 месяца', id: 'stat-revenue' },
+            { value: '+18%', label: 'Конверсия продаж', id: 'stat-conversion' },
+            { value: '30 сек', label: 'До инсайта', id: 'stat-insight' },
+            { value: '5 мин', label: 'На настройку', id: 'stat-setup' },
           ].map((stat, i) => (
-            <div key={i} className="animate-float" style={{ animationDelay: `${i * 0.1}s` }}>
+            <div 
+              key={i}
+              id={stat.id}
+              data-ym-name={`Метрика: ${stat.label}`}
+              className="animate-float" 
+              style={{ animationDelay: `${i * 0.1}s` }}>
               <div style={{ fontSize: '56px', fontWeight: 800, color: '#FFF' }}>{stat.value}</div>
               <div style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)', marginTop: '8px', fontWeight: 500 }}>{stat.label}</div>
             </div>
@@ -257,9 +364,16 @@ function LandingConcept1() {
       </section>
 
       {/* Features Grid */}
-      <section id="features" style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
+      <section 
+        id="features"
+        data-ym-area="features"
+        data-ym-name="Блок возможностей"
+        style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '52px', fontWeight: 800, textAlign: 'center', marginBottom: '20px', letterSpacing: '-1px' }}>
+          <h2 
+            id="features-headline"
+            data-ym-name="Заголовок: Диалоги, которые приносят деньги"
+            style={{ fontSize: '52px', fontWeight: 800, textAlign: 'center', marginBottom: '20px', letterSpacing: '-1px' }}>
             Диалоги, которые <span className="gradient-text">приносят деньги</span>
           </h2>
           <p style={{ textAlign: 'center', color: '#666', marginBottom: '60px', fontSize: '18px' }}>
@@ -268,19 +382,24 @@ function LandingConcept1() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {[
-              { icon: '🚦', title: 'Светофор метрик', desc: 'Зелёный. Жёлтый. Красный. 3 секунды — и ты знаешь, где деньги.' },
-              { icon: '💰', title: 'Рост выручки', desc: 'Каждый контакт превращается в управляемый источник продаж.' },
-              { icon: '📱', title: 'Телеграм-бот', desc: 'Алерты о продажах и проблемах прямо в мессенджер.' },
-              { icon: '📞', title: 'Транскрибация', desc: 'Каждый звонок — текст. ИИ найдёт упущенные продажи.' },
-              { icon: '🎯', title: 'Сигналы намерений', desc: 'Кто готов купить. Кто думает уйти. Действуйте на опережение.' },
-              { icon: '🛡️', title: 'Защита выручки', desc: 'ИИ обнаруживает попытки увода клиентов и денег.' },
+              { icon: '🚦', title: 'Светофор метрик', desc: 'Зелёный. Жёлтый. Красный. 3 секунды — и ты знаешь, где деньги.', id: 'feature-traffic-light' },
+              { icon: '💰', title: 'Рост выручки', desc: 'Каждый контакт превращается в управляемый источник продаж.', id: 'feature-revenue' },
+              { icon: '📱', title: 'Телеграм-бот', desc: 'Алерты о продажах и проблемах прямо в мессенджер.', id: 'feature-telegram' },
+              { icon: '📞', title: 'Транскрибация', desc: 'Каждый звонок — текст. ИИ найдёт упущенные продажи.', id: 'feature-transcription' },
+              { icon: '🎯', title: 'Сигналы намерений', desc: 'Кто готов купить. Кто думает уйти. Действуйте на опережение.', id: 'feature-intent' },
+              { icon: '🛡️', title: 'Защита выручки', desc: 'ИИ обнаруживает попытки увода клиентов и денег.', id: 'feature-protection' },
             ].map((f, i) => (
-              <div key={i} className="card-shine hover-lift" style={{
-                padding: '40px',
-                borderRadius: '24px',
-                backgroundColor: '#FFF',
-                border: '1px solid rgba(118,67,215,0.1)',
-              }}>
+              <div 
+                key={i}
+                id={f.id}
+                data-ym-name={`Фича: ${f.title}`}
+                className="card-shine hover-lift" 
+                style={{
+                  padding: '40px',
+                  borderRadius: '24px',
+                  backgroundColor: '#FFF',
+                  border: '1px solid rgba(118,67,215,0.1)',
+                }}>
                 <div style={{ fontSize: '48px', marginBottom: '20px' }}>{f.icon}</div>
                 <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '12px', color: '#190750' }}>{f.title}</h3>
                 <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.7 }}>{f.desc}</p>
@@ -291,9 +410,16 @@ function LandingConcept1() {
       </section>
 
       {/* Revenue Section */}
-      <section id="revenue" style={{ padding: '120px 20px', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAF8FF 100%)' }}>
+      <section 
+        id="revenue"
+        data-ym-area="revenue"
+        data-ym-name="Блок омниканальности"
+        style={{ padding: '120px 20px', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAF8FF 100%)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '52px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
+          <h2 
+            id="revenue-headline"
+            data-ym-name="Заголовок: Омниканальность — это продажи"
+            style={{ fontSize: '52px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
             Омниканальность — <span className="gradient-text">это продажи</span>
           </h2>
           <p style={{ fontSize: '20px', color: '#666', marginBottom: '60px' }}>
@@ -302,17 +428,22 @@ function LandingConcept1() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px' }}>
             {[
-              { icon: '📞', title: 'Телефон', desc: 'Звонки = продажи' },
-              { icon: '💬', title: 'Чаты', desc: 'Ватсап, Телеграм' },
-              { icon: '📧', title: 'Почта', desc: 'Коммерческие' },
-              { icon: '🌐', title: 'Сайт', desc: 'Лиды и боты' },
-              { icon: '📱', title: 'Соцсети', desc: 'Комментарии' },
+              { icon: '📞', title: 'Телефон', desc: 'Звонки = продажи', id: 'channel-phone' },
+              { icon: '💬', title: 'Чаты', desc: 'Ватсап, Телеграм', id: 'channel-chats' },
+              { icon: '📧', title: 'Почта', desc: 'Коммерческие', id: 'channel-email' },
+              { icon: '🌐', title: 'Сайт', desc: 'Лиды и боты', id: 'channel-web' },
+              { icon: '📱', title: 'Соцсети', desc: 'Комментарии', id: 'channel-social' },
             ].map((ch, i) => (
-              <div key={i} className="hover-lift" style={{
-                padding: '32px 24px',
-                borderRadius: '20px',
-                backgroundColor: '#FFF',
-                border: '2px solid rgba(118,67,215,0.15)',
+              <div 
+                key={i}
+                id={ch.id}
+                data-ym-name={`Канал: ${ch.title}`}
+                className="hover-lift" 
+                style={{
+                  padding: '32px 24px',
+                  borderRadius: '20px',
+                  backgroundColor: '#FFF',
+                  border: '2px solid rgba(118,67,215,0.15)',
                 cursor: 'pointer',
               }}>
                 <div style={{ fontSize: '40px', marginBottom: '16px' }}>{ch.icon}</div>
@@ -325,33 +456,53 @@ function LandingConcept1() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '120px 20px', textAlign: 'center', backgroundColor: '#190750' }}>
-        <h2 style={{ fontSize: '52px', fontWeight: 800, marginBottom: '24px', color: '#FFF' }}>
+      <section 
+        id="cta-section"
+        data-ym-area="cta"
+        data-ym-name="Блок призыва к действию"
+        style={{ padding: '120px 20px', textAlign: 'center', backgroundColor: '#190750' }}>
+        <h2 
+          id="cta-headline"
+          data-ym-name="Заголовок: Готовы к росту выручки?"
+          style={{ fontSize: '52px', fontWeight: 800, marginBottom: '24px', color: '#FFF' }}>
           Готовы к росту выручки?
         </h2>
         <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', marginBottom: '48px' }}>
           14 дней бесплатно. Без карты. Без риска.
         </p>
-        <button className="btn-primary animate-glow" style={{
-          padding: '20px 56px',
-          borderRadius: '50px',
-          border: 'none',
-          backgroundColor: '#7643d7',
-          color: '#FFF',
-          fontWeight: 700,
-          fontSize: '18px',
-          cursor: 'pointer',
-          boxShadow: '0 8px 40px rgba(118,67,215,0.5)',
-        }}>
+        <button 
+          id="cta-main-button"
+          data-ym-click-type="button"
+          data-ym-name="Кнопка: Начать сейчас (главный CTA)"
+          data-ym-goal-id="start_now_cta"
+          className="btn-primary animate-glow" 
+          style={{
+            padding: '20px 56px',
+            borderRadius: '50px',
+            border: 'none',
+            backgroundColor: '#7643d7',
+            color: '#FFF',
+            fontWeight: 700,
+            fontSize: '18px',
+            cursor: 'pointer',
+            boxShadow: '0 8px 40px rgba(118,67,215,0.5)',
+          }}>
           Начать сейчас
         </button>
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: '60px 20px', borderTop: '1px solid rgba(118,67,215,0.1)', backgroundColor: '#FFF' }}>
+      <footer 
+        id="footer"
+        data-ym-area="footer"
+        data-ym-name="Подвал сайта"
+        style={{ padding: '60px 20px', borderTop: '1px solid rgba(118,67,215,0.1)', backgroundColor: '#FFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px' }}>
           <div>
-            <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7', marginBottom: '16px' }}>
+            <div 
+              id="footer-logo"
+              data-ym-name="Логотип (футер)"
+              style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7', marginBottom: '16px' }}>
               Контакт.ИИ
             </div>
             <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.6 }}>
@@ -361,30 +512,42 @@ function LandingConcept1() {
           <div>
             <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Продукт</div>
             <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
-              <div>Витрина виджетов</div>
-              <div>ИИ-ассистент</div>
-              <div>Транскрибация</div>
+              <div data-ym-name="Ссылка: Витрина виджетов">Витрина виджетов</div>
+              <div data-ym-name="Ссылка: ИИ-ассистент">ИИ-ассистент</div>
+              <div data-ym-name="Ссылка: Транскрибация">Транскрибация</div>
             </div>
           </div>
           <div>
             <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Компания</div>
             <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
-              <div>О нас</div>
-              <div>Карьера</div>
-              <div>Блог</div>
+              <div data-ym-name="Ссылка: О нас">О нас</div>
+              <div data-ym-name="Ссылка: Карьера">Карьера</div>
+              <div data-ym-name="Ссылка: Блог">Блог</div>
             </div>
           </div>
           <div>
             <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Контакты</div>
             <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
-              <div>📞 8 800 123-45-67</div>
-              <div>📧 info@contact-ai.ru</div>
+              <div data-ym-name="Телефон">📞 8 800 123-45-67</div>
+              <div data-ym-name="Email">📧 info@contact-ai.ru</div>
             </div>
           </div>
         </div>
         <div style={{ textAlign: 'center', color: '#999', fontSize: '12px', marginTop: '40px' }}>
           © 2026 Контакт.ИИ. Все права защищены.
         </div>
+        
+        {/* Яндекс.Метрика: noscript для сбора статистики при отключённом JS */}
+        {/* Замените XXXXXXXX на номер вашего счётчика */}
+        <noscript>
+          <div>
+            <img 
+              src="https://mc.yandex.ru/watch/XXXXXXXX" 
+              style={{ position: 'absolute', left: '-9999px' }} 
+              alt="" 
+            />
+          </div>
+        </noscript>
       </footer>
     </div>
   )
