@@ -3031,6 +3031,169 @@ function LandingConcept5() {
             </p>
           </div>
 
+          {/* Блок ИИ-агента — персонифицированное сообщение */}
+          <div style={{
+            maxWidth: '800px',
+            margin: '0 auto 80px',
+            backgroundColor: '#FFF',
+            borderRadius: '24px',
+            padding: '32px',
+            boxShadow: '0 8px 40px rgba(118,67,215,0.1)',
+            border: '2px solid rgba(118,67,215,0.15)',
+          }}>
+            {/* Header с аватаром ИИ */}
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '16px', 
+              marginBottom: '24px',
+              paddingBottom: '20px',
+              borderBottom: '1px solid rgba(118,67,215,0.1)',
+            }}>
+              <div style={{
+                width: '56px',
+                height: '56px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #7643d7, #9b6dff)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '24px',
+                boxShadow: '0 4px 16px rgba(118,67,215,0.3)',
+              }}>
+                🤖
+              </div>
+              <div>
+                <div style={{ fontWeight: 700, color: '#190750', fontSize: '16px' }}>ИИ-агент Контакт.ИИ</div>
+                <div style={{ color: '#22C55E', fontSize: '13px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#22C55E' }}></span>
+                  Онлайн • Анализирует вашу работу
+                </div>
+              </div>
+            </div>
+            
+            {/* Заголовок сообщения */}
+            <div style={{ 
+              fontSize: '20px', 
+              fontWeight: 700, 
+              color: '#190750', 
+              marginBottom: '24px',
+              lineHeight: 1.4,
+            }}>
+              Привет, Андрей! 👋 Я заметил, что вы столкнулись с несколькими задачами, занявшими ваше время:
+            </div>
+            
+            {/* Виджеты с инсайтами */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              
+              {/* Виджет 1: Интеграция */}
+              <div style={{
+                backgroundColor: '#FAF8FF',
+                borderRadius: '16px',
+                padding: '20px 24px',
+                border: '1px solid rgba(118,67,215,0.1)',
+              }}>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '12px',
+                    backgroundColor: 'rgba(239,68,68,0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '22px',
+                    flexShrink: 0,
+                  }}>
+                    ⏱️
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ color: '#666', fontSize: '14px', marginBottom: '8px', lineHeight: 1.6 }}>
+                      Вы настраивали интеграцию CRM <strong style={{ color: '#EF4444' }}>в течение двух дней</strong> и привязали к Битрикс24 <strong style={{ color: '#EF4444' }}>трёх из 200 сотрудников</strong>.
+                    </div>
+                    <div style={{ 
+                      color: '#22C55E', 
+                      fontWeight: 600, 
+                      fontSize: '15px',
+                      padding: '12px 16px',
+                      backgroundColor: 'rgba(34,197,94,0.1)',
+                      borderRadius: '10px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                    }}>
+                      <span>✨</span> Со мной вы сможете настроить работу <strong>всех сотрудников</strong> всего за <strong>15 минут</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Виджет 2: Неактивные сотрудники */}
+              <div style={{
+                backgroundColor: '#FAF8FF',
+                borderRadius: '16px',
+                padding: '20px 24px',
+                border: '1px solid rgba(118,67,215,0.1)',
+              }}>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '12px',
+                    backgroundColor: 'rgba(255,165,0,0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '22px',
+                    flexShrink: 0,
+                  }}>
+                    ⚠️
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ color: '#666', fontSize: '14px', marginBottom: '12px', lineHeight: 1.6 }}>
+                      Я заметил, что <strong style={{ color: '#FF8C00' }}>10 сотрудников не проявляли активность уже 29 дней</strong>, вот их номера:
+                    </div>
+                    <div style={{ 
+                      display: 'flex', 
+                      flexWrap: 'wrap', 
+                      gap: '8px', 
+                      marginBottom: '12px',
+                    }}>
+                      {['+7 123 456-78-90', '+7 098 756-74-33', '+7 356 473-46-77', 'ещё 7...'].map((phone, i) => (
+                        <span key={i} style={{
+                          padding: '6px 12px',
+                          backgroundColor: 'rgba(255,165,0,0.1)',
+                          borderRadius: '6px',
+                          fontSize: '13px',
+                          color: '#190750',
+                          fontWeight: 500,
+                        }}>
+                          {phone}
+                        </span>
+                      ))}
+                    </div>
+                    <button style={{
+                      padding: '10px 20px',
+                      backgroundColor: '#7643d7',
+                      color: '#FFF',
+                      border: 'none',
+                      borderRadius: '10px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                    }}>
+                      <span>📊</span> Проверить их статистику вызовов
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
           {/* Карточки возможностей для сотрудников */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             
