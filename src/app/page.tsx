@@ -2555,6 +2555,454 @@ function LandingConcept5() {
         </div>
       </section>
 
+      {/* БЛОК: Проверь работу — видеозвонок с коллегой */}
+      <section 
+        id="video-call"
+        data-ym-area="video-call"
+        data-ym-name="Блок: Видеозвонок с коллегой"
+        style={{ padding: '120px 20px', background: 'linear-gradient(180deg, #FFF 0%, #FAF8FF 100%)' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          
+          <div style={{
+            display: 'inline-block',
+            padding: '14px 32px',
+            borderRadius: '60px',
+            background: 'linear-gradient(90deg, #3B82F6, #60A5FA)',
+            marginBottom: '32px',
+            fontSize: '16px',
+            color: '#FFF',
+            fontWeight: 700,
+            boxShadow: '0 8px 24px rgba(59,130,246,0.3)',
+          }}>
+            📹 Покажите сервис в деле
+          </div>
+          
+          <h2 style={{ 
+            fontSize: '44px', 
+            fontWeight: 800, 
+            marginBottom: '24px', 
+            lineHeight: 1.2,
+            letterSpacing: '-1px',
+            color: '#190750'
+          }}>
+            Хотите убедиться, что всё работает? <span className="gradient-text">Покажите коллеге!</span>
+          </h2>
+          
+          <p style={{ 
+            fontSize: '19px', 
+            color: '#666', 
+            marginBottom: '20px', 
+            lineHeight: 1.8,
+            maxWidth: '750px',
+            margin: '0 auto 20px',
+          }}>
+            Лучший способ оценить Контакт.ИИ — увидеть его в работе прямо сейчас. 
+            Позвоните коллеге по видео, поделитесь экраном и за 5 минут покажите ключевые возможности. 
+            Так вы не только проверите сервис, но и поможете коллеге понять, чем он будет полезен.
+          </p>
+          
+          <p style={{ 
+            fontSize: '17px', 
+            color: '#999', 
+            marginBottom: '48px', 
+            lineHeight: 1.6,
+          }}>
+            💡 Совет: начните со «Светофора метрик» — это занимает 30 секунд и сразу понятно, о чём речь.
+          </p>
+          
+          <button 
+            id="video-call-btn"
+            data-ym-click-type="button"
+            data-ym-name="Кнопка: Начать видеозвонок"
+            data-ym-goal-id="start_video_call"
+            onClick={() => {
+              const modal = document.getElementById('video-call-modal');
+              if (modal) modal.style.display = 'flex';
+            }}
+            style={{
+              padding: '20px 48px',
+              borderRadius: '50px',
+              border: 'none',
+              background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
+              color: '#FFF',
+              fontWeight: 700,
+              fontSize: '18px',
+              cursor: 'pointer',
+              boxShadow: '0 12px 40px rgba(59,130,246,0.4)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '12px',
+            }}>
+            <span style={{ fontSize: '22px' }}>📹</span>
+            Начать видеозвонок
+          </button>
+          
+          <div style={{ 
+            marginTop: '32px', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            gap: '32px', 
+            color: '#999', 
+            fontSize: '14px' 
+          }}>
+            <span>✓ Без установки</span>
+            <span>✓ Работает в браузере</span>
+            <span>✓ Защищённое соединение</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Модальное окно видеозвонка (имитация Jitsi) */}
+      <div 
+        id="video-call-modal"
+        onClick={(e) => {
+          if (e.target.id === 'video-call-modal') {
+            (e.target as HTMLElement).style.display = 'none';
+          }
+        }}
+        style={{
+          display: 'none',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.9)',
+          zIndex: 1000,
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px',
+        }}>
+        <div 
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            backgroundColor: '#1a1a1a',
+            borderRadius: '16px',
+            width: '100%',
+            maxWidth: '1100px',
+            height: '85vh',
+            maxHeight: '700px',
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'hidden',
+            boxShadow: '0 25px 80px rgba(0,0,0,0.5)',
+          }}>
+          
+          {/* Header Jitsi */}
+          <div style={{
+            padding: '12px 20px',
+            backgroundColor: '#2d2d2d',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            borderBottom: '1px solid #3d3d3d',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{ 
+                width: '32px', 
+                height: '32px', 
+                borderRadius: '8px', 
+                background: 'linear-gradient(135deg, #9d4edd, #7b2cbf)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '16px',
+                fontWeight: 700,
+                color: '#FFF',
+              }}>
+                K
+              </div>
+              <div>
+                <div style={{ color: '#FFF', fontWeight: 600, fontSize: '15px' }}>Контакт.ИИ — Демо-звонок</div>
+                <div style={{ color: '#888', fontSize: '12px' }}>Встреча началась</div>
+              </div>
+            </div>
+            <button 
+              onClick={() => {
+                const modal = document.getElementById('video-call-modal');
+                if (modal) modal.style.display = 'none';
+              }}
+              style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '8px',
+                border: 'none',
+                backgroundColor: '#3d3d3d',
+                color: '#FFF',
+                fontSize: '20px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              ✕
+            </button>
+          </div>
+          
+          {/* Видео область */}
+          <div style={{
+            flex: 1,
+            display: 'grid',
+            gridTemplateColumns: '2fr 1fr',
+            gap: '16px',
+            padding: '16px',
+            backgroundColor: '#1a1a1a',
+          }}>
+            {/* Основное видео — Вы */}
+            <div style={{
+              backgroundColor: '#2d2d2d',
+              borderRadius: '12px',
+              position: 'relative',
+              overflow: 'hidden',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <div style={{
+                width: '120px',
+                height: '120px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #3B82F6, #60A5FA)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '48px',
+                color: '#FFF',
+                fontWeight: 700,
+              }}>
+                В
+              </div>
+              <div style={{
+                position: 'absolute',
+                bottom: '16px',
+                left: '16px',
+                padding: '8px 16px',
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                borderRadius: '8px',
+                color: '#FFF',
+                fontSize: '14px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}>
+                <span style={{ 
+                  width: '8px', 
+                  height: '8px', 
+                  borderRadius: '50%', 
+                  backgroundColor: '#22C55E',
+                }}></span>
+                Вы
+              </div>
+              {/* Плашка демонстрации экрана */}
+              <div style={{
+                position: 'absolute',
+                top: '16px',
+                right: '16px',
+                padding: '8px 16px',
+                backgroundColor: 'rgba(59,130,246,0.9)',
+                borderRadius: '8px',
+                color: '#FFF',
+                fontSize: '13px',
+                fontWeight: 600,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}>
+                <span>🖥️</span> Демонстрация экрана
+              </div>
+            </div>
+            
+            {/* Мини-видео — Коллега */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+            }}>
+              <div style={{
+                backgroundColor: '#2d2d2d',
+                borderRadius: '12px',
+                flex: 1,
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #22C55E, #4ADE80)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '32px',
+                  color: '#FFF',
+                  fontWeight: 700,
+                }}>
+                  К
+                </div>
+                <div style={{
+                  position: 'absolute',
+                  bottom: '12px',
+                  left: '12px',
+                  padding: '6px 12px',
+                  backgroundColor: 'rgba(0,0,0,0.7)',
+                  borderRadius: '6px',
+                  color: '#FFF',
+                  fontSize: '12px',
+                }}>
+                  Коллега
+                </div>
+              </div>
+              
+              {/* Информационная панель */}
+              <div style={{
+                backgroundColor: '#2d2d2d',
+                borderRadius: '12px',
+                padding: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px',
+              }}>
+                <div style={{ color: '#FFF', fontWeight: 600, fontSize: '14px' }}>
+                  💡 Подсказка
+                </div>
+                <div style={{ color: '#aaa', fontSize: '13px', lineHeight: 1.5 }}>
+                  Расскажите о «Светофоре метрик» — коллега сразу поймёт ценность сервиса за 30 секунд.
+                </div>
+                <div style={{ 
+                  display: 'flex', 
+                  gap: '8px', 
+                  marginTop: '8px',
+                }}>
+                  <span style={{ 
+                    padding: '4px 10px', 
+                    backgroundColor: 'rgba(118,67,215,0.2)', 
+                    borderRadius: '4px',
+                    color: '#a78bfa',
+                    fontSize: '11px',
+                  }}>Светофор</span>
+                  <span style={{ 
+                    padding: '4px 10px', 
+                    backgroundColor: 'rgba(34,197,94,0.2)', 
+                    borderRadius: '4px',
+                    color: '#4ade80',
+                    fontSize: '11px',
+                  }}>ROI +340%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Панель управления (как в Jitsi) */}
+          <div style={{
+            padding: '16px 24px',
+            backgroundColor: '#2d2d2d',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '12px',
+            borderTop: '1px solid #3d3d3d',
+          }}>
+            {/* Микрофон */}
+            <button style={{
+              width: '52px',
+              height: '52px',
+              borderRadius: '50%',
+              border: 'none',
+              backgroundColor: '#4d4d4d',
+              color: '#FFF',
+              fontSize: '22px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              🎤
+            </button>
+            
+            {/* Камера */}
+            <button style={{
+              width: '52px',
+              height: '52px',
+              borderRadius: '50%',
+              border: 'none',
+              backgroundColor: '#4d4d4d',
+              color: '#FFF',
+              fontSize: '22px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              📹
+            </button>
+            
+            {/* Демонстрация экрана */}
+            <button style={{
+              width: '52px',
+              height: '52px',
+              borderRadius: '50%',
+              border: 'none',
+              backgroundColor: '#3B82F6',
+              color: '#FFF',
+              fontSize: '22px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 4px 16px rgba(59,130,246,0.4)',
+            }}>
+              🖥️
+            </button>
+            
+            {/* Чат */}
+            <button style={{
+              width: '52px',
+              height: '52px',
+              borderRadius: '50%',
+              border: 'none',
+              backgroundColor: '#4d4d4d',
+              color: '#FFF',
+              fontSize: '22px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              💬
+            </button>
+            
+            {/* Разделитель */}
+            <div style={{ width: '1px', height: '40px', backgroundColor: '#3d3d3d', margin: '0 12px' }}></div>
+            
+            {/* Завершить звонок */}
+            <button 
+              onClick={() => {
+                const modal = document.getElementById('video-call-modal');
+                if (modal) modal.style.display = 'none';
+              }}
+              style={{
+                width: '52px',
+                height: '52px',
+                borderRadius: '50%',
+                border: 'none',
+                backgroundColor: '#EF4444',
+                color: '#FFF',
+                fontSize: '22px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 4px 16px rgba(239,68,68,0.4)',
+              }}>
+              📞
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* БЛОК: Ценность для других сотрудников */}
       <section 
         id="employees"
