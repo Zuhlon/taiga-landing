@@ -3022,20 +3022,27 @@ function LandingConcept5() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA - Создать рабочее место */}
       <section style={{ padding: '120px 20px', textAlign: 'center', backgroundColor: '#190750' }}>
         <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '24px', color: '#FFF' }}>
-          Готовы к росту выручки?
+          Создайте рабочее место для коллеги
         </h2>
         <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', marginBottom: '20px', maxWidth: '600px', margin: '0 auto 20px' }}>
-          Платформа роста выручки через коммуникации
+          Пригласите руководителя или оператора — они увидят ценность сервиса
         </p>
         <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', marginBottom: '48px', maxWidth: '500px', margin: '0 auto 48px' }}>
-          14 дней бесплатно. Без привязки карты. Настройка за 5 минут.
+          Настройка занимает 2 минуты. Коллега получит приглашение с готовым рабочим местом.
         </p>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-          <button className="btn-primary animate-glow" style={{
-            padding: '20px 50px',
+        
+        {/* Кнопка открытия формы */}
+        <button 
+          onClick={() => {
+            const modal = document.getElementById('workspace-modal');
+            if (modal) modal.style.display = 'flex';
+          }}
+          className="btn-primary animate-glow" 
+          style={{
+            padding: '22px 56px',
             borderRadius: '50px',
             border: 'none',
             backgroundColor: '#22C55E',
@@ -3045,28 +3052,427 @@ function LandingConcept5() {
             cursor: 'pointer',
             boxShadow: '0 8px 40px rgba(34,197,94,0.5)',
           }}>
-            Получить расчёт ROI
-          </button>
-          <button className="hover-lift" style={{
-            padding: '20px 50px',
-            borderRadius: '50px',
-            border: '2px solid rgba(255,255,255,0.3)',
-            backgroundColor: 'transparent',
-            color: '#FFF',
-            fontWeight: 700,
-            fontSize: '18px',
-            cursor: 'pointer',
-          }}>
-            Начать бесплатно
-          </button>
-        </div>
+          Создать рабочее место
+        </button>
+        
         <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center', gap: '40px', color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
-          <span>✓ Настройка за 5 минут</span>
-          <span>✓ Интеграция с AmoCRM</span>
-          <span>✓ Прозрачные метрики</span>
-          <span>✓ Поддержка 24/7</span>
+          <span>✓ Готовые шаблоны</span>
+          <span>✓ Приглашение по SMS/Email</span>
+          <span>✓ 14 дней бесплатно</span>
         </div>
       </section>
+
+      {/* Модальное окно создания рабочего места */}
+      <div 
+        id="workspace-modal"
+        onClick={(e) => {
+          if (e.target.id === 'workspace-modal') {
+            (e.target as HTMLElement).style.display = 'none';
+          }
+        }}
+        style={{
+          display: 'none',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.7)',
+          zIndex: 1000,
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px',
+        }}>
+        <div 
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            backgroundColor: '#FFF',
+            borderRadius: '32px',
+            padding: '48px',
+            maxWidth: '520px',
+            width: '100%',
+            maxHeight: '90vh',
+            overflowY: 'auto',
+          }}>
+          {/* Заголовок модального окна */}
+          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            <div style={{
+              width: '72px',
+              height: '72px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(34,197,94,0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '36px',
+              margin: '0 auto 20px',
+            }}>
+              👤
+            </div>
+            <h3 style={{ fontSize: '28px', fontWeight: 800, color: '#190750', marginBottom: '8px' }}>
+              Создать рабочее место
+            </h3>
+            <p style={{ fontSize: '15px', color: '#666' }}>
+              Выберите шаблон и укажите контакт коллеги
+            </p>
+          </div>
+
+          {/* Выбор шаблона */}
+          <div style={{ marginBottom: '28px' }}>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: '#190750', marginBottom: '16px' }}>
+              Шаблон рабочего места
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              {/* Руководитель */}
+              <div 
+                onClick={() => {
+                  const cards = document.querySelectorAll('[data-template]');
+                  cards.forEach(card => {
+                    (card as HTMLElement).style.borderColor = 'rgba(118,67,215,0.1)';
+                    (card as HTMLElement).style.backgroundColor = '#FAF8FF';
+                  });
+                  const selected = document.querySelector('[data-template="supervisor"]') as HTMLElement;
+                  if (selected) {
+                    selected.style.borderColor = '#22C55E';
+                    selected.style.backgroundColor = 'rgba(34,197,94,0.05)';
+                  }
+                }}
+                data-template="supervisor"
+                style={{
+                  padding: '20px',
+                  borderRadius: '20px',
+                  border: '2px solid rgba(118,67,215,0.1)',
+                  backgroundColor: '#FAF8FF',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}>
+                <div style={{ fontSize: '32px', marginBottom: '12px' }}>👔</div>
+                <div style={{ fontWeight: 700, color: '#190750', marginBottom: '4px' }}>Руководитель</div>
+                <div style={{ fontSize: '12px', color: '#666' }}>Светофор, ROI, KPI</div>
+              </div>
+              
+              {/* Оператор */}
+              <div 
+                onClick={() => {
+                  const cards = document.querySelectorAll('[data-template]');
+                  cards.forEach(card => {
+                    (card as HTMLElement).style.borderColor = 'rgba(118,67,215,0.1)';
+                    (card as HTMLElement).style.backgroundColor = '#FAF8FF';
+                  });
+                  const selected = document.querySelector('[data-template="operator"]') as HTMLElement;
+                  if (selected) {
+                    selected.style.borderColor = '#3B82F6';
+                    selected.style.backgroundColor = 'rgba(59,130,246,0.05)';
+                  }
+                }}
+                data-template="operator"
+                style={{
+                  padding: '20px',
+                  borderRadius: '20px',
+                  border: '2px solid rgba(118,67,215,0.1)',
+                  backgroundColor: '#FAF8FF',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}>
+                <div style={{ fontSize: '32px', marginBottom: '12px' }}>🎧</div>
+                <div style={{ fontWeight: 700, color: '#190750', marginBottom: '4px' }}>Оператор</div>
+                <div style={{ fontSize: '12px', color: '#666' }}>Статистика, рейтинги</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Поля контакта */}
+          <div style={{ marginBottom: '28px' }}>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: '#190750', marginBottom: '16px' }}>
+              Контактные данные коллеги
+            </div>
+            
+            {/* Имя */}
+            <div style={{ marginBottom: '16px' }}>
+              <input 
+                type="text"
+                placeholder="Имя коллеги"
+                style={{
+                  width: '100%',
+                  padding: '16px 20px',
+                  borderRadius: '14px',
+                  border: '2px solid rgba(118,67,215,0.15)',
+                  fontSize: '16px',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = '#7643d7';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = 'rgba(118,67,215,0.15)';
+                }}
+              />
+            </div>
+            
+            {/* Телефон */}
+            <div style={{ marginBottom: '16px' }}>
+              <input 
+                type="tel"
+                placeholder="Телефон (+7 999 123-45-67)"
+                style={{
+                  width: '100%',
+                  padding: '16px 20px',
+                  borderRadius: '14px',
+                  border: '2px solid rgba(118,67,215,0.15)',
+                  fontSize: '16px',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = '#7643d7';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = 'rgba(118,67,215,0.15)';
+                }}
+              />
+            </div>
+            
+            {/* Email */}
+            <div>
+              <input 
+                type="email"
+                placeholder="Email (colleague@company.ru)"
+                style={{
+                  width: '100%',
+                  padding: '16px 20px',
+                  borderRadius: '14px',
+                  border: '2px solid rgba(118,67,215,0.15)',
+                  fontSize: '16px',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = '#7643d7';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = 'rgba(118,67,215,0.15)';
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Способ отправки */}
+          <div style={{ marginBottom: '32px' }}>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: '#190750', marginBottom: '16px' }}>
+              Способ отправки приглашения
+            </div>
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <button 
+                onClick={() => {
+                  const btns = document.querySelectorAll('[data-send-method]');
+                  btns.forEach(btn => {
+                    (btn as HTMLElement).style.backgroundColor = '#FAF8FF';
+                    (btn as HTMLElement).style.color = '#190750';
+                    (btn as HTMLElement).style.borderColor = 'rgba(118,67,215,0.15)';
+                  });
+                  const selected = document.querySelector('[data-send-method="sms"]') as HTMLElement;
+                  if (selected) {
+                    selected.style.backgroundColor = '#22C55E';
+                    selected.style.color = '#FFF';
+                    selected.style.borderColor = '#22C55E';
+                  }
+                }}
+                data-send-method="sms"
+                style={{
+                  flex: 1,
+                  padding: '14px',
+                  borderRadius: '12px',
+                  border: '2px solid rgba(118,67,215,0.15)',
+                  backgroundColor: '#FAF8FF',
+                  color: '#190750',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}>
+                📱 SMS
+              </button>
+              <button 
+                onClick={() => {
+                  const btns = document.querySelectorAll('[data-send-method]');
+                  btns.forEach(btn => {
+                    (btn as HTMLElement).style.backgroundColor = '#FAF8FF';
+                    (btn as HTMLElement).style.color = '#190750';
+                    (btn as HTMLElement).style.borderColor = 'rgba(118,67,215,0.15)';
+                  });
+                  const selected = document.querySelector('[data-send-method="email"]') as HTMLElement;
+                  if (selected) {
+                    selected.style.backgroundColor = '#3B82F6';
+                    selected.style.color = '#FFF';
+                    selected.style.borderColor = '#3B82F6';
+                  }
+                }}
+                data-send-method="email"
+                style={{
+                  flex: 1,
+                  padding: '14px',
+                  borderRadius: '12px',
+                  border: '2px solid rgba(118,67,215,0.15)',
+                  backgroundColor: '#FAF8FF',
+                  color: '#190750',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}>
+                📧 Email
+              </button>
+              <button 
+                onClick={() => {
+                  const btns = document.querySelectorAll('[data-send-method]');
+                  btns.forEach(btn => {
+                    (btn as HTMLElement).style.backgroundColor = '#FAF8FF';
+                    (btn as HTMLElement).style.color = '#190750';
+                    (btn as HTMLElement).style.borderColor = 'rgba(118,67,215,0.15)';
+                  });
+                  const selected = document.querySelector('[data-send-method="both"]') as HTMLElement;
+                  if (selected) {
+                    selected.style.backgroundColor = '#7643d7';
+                    selected.style.color = '#FFF';
+                    selected.style.borderColor = '#7643d7';
+                  }
+                }}
+                data-send-method="both"
+                style={{
+                  flex: 1,
+                  padding: '14px',
+                  borderRadius: '12px',
+                  border: '2px solid rgba(118,67,215,0.15)',
+                  backgroundColor: '#FAF8FF',
+                  color: '#190750',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}>
+                📱📧 Оба
+              </button>
+            </div>
+          </div>
+
+          {/* Кнопки действий */}
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <button 
+              onClick={() => {
+                const modal = document.getElementById('workspace-modal');
+                if (modal) modal.style.display = 'none';
+              }}
+              style={{
+                flex: 1,
+                padding: '16px',
+                borderRadius: '14px',
+                border: '2px solid rgba(118,67,215,0.2)',
+                backgroundColor: 'transparent',
+                color: '#190750',
+                fontWeight: 600,
+                fontSize: '16px',
+                cursor: 'pointer',
+              }}>
+              Отмена
+            </button>
+            <button 
+              onClick={() => {
+                // Здесь будет логика отправки
+                const modal = document.getElementById('workspace-modal');
+                const successModal = document.getElementById('success-modal');
+                if (modal) modal.style.display = 'none';
+                if (successModal) successModal.style.display = 'flex';
+              }}
+              style={{
+                flex: 2,
+                padding: '16px',
+                borderRadius: '14px',
+                border: 'none',
+                backgroundColor: '#22C55E',
+                color: '#FFF',
+                fontWeight: 700,
+                fontSize: '16px',
+                cursor: 'pointer',
+                boxShadow: '0 4px 20px rgba(34,197,94,0.3)',
+              }}>
+              Отправить приглашение
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Модальное окно успеха */}
+      <div 
+        id="success-modal"
+        onClick={(e) => {
+          if (e.target.id === 'success-modal') {
+            (e.target as HTMLElement).style.display = 'none';
+          }
+        }}
+        style={{
+          display: 'none',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.7)',
+          zIndex: 1000,
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px',
+        }}>
+        <div 
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            backgroundColor: '#FFF',
+            borderRadius: '32px',
+            padding: '48px',
+            maxWidth: '420px',
+            width: '100%',
+            textAlign: 'center',
+          }}>
+          <div style={{
+            width: '88px',
+            height: '88px',
+            borderRadius: '50%',
+            backgroundColor: 'rgba(34,197,94,0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '44px',
+            margin: '0 auto 24px',
+          }}>
+            ✓
+          </div>
+          <h3 style={{ fontSize: '28px', fontWeight: 800, color: '#190750', marginBottom: '12px' }}>
+            Приглашение отправлено!
+          </h3>
+          <p style={{ fontSize: '15px', color: '#666', marginBottom: '32px', lineHeight: 1.6 }}>
+            Коллега получит ссылку на рабочее место. 
+            После активации вы увидите его в списке пользователей.
+          </p>
+          <button 
+            onClick={() => {
+              const modal = document.getElementById('success-modal');
+              if (modal) modal.style.display = 'none';
+            }}
+            style={{
+              width: '100%',
+              padding: '16px',
+              borderRadius: '14px',
+              border: 'none',
+              backgroundColor: '#22C55E',
+              color: '#FFF',
+              fontWeight: 700,
+              fontSize: '16px',
+              cursor: 'pointer',
+            }}>
+            Отлично!
+          </button>
+        </div>
+      </div>
 
       {/* Footer */}
       <footer style={{ padding: '60px 20px', borderTop: '1px solid rgba(118,67,215,0.1)', backgroundColor: '#FFF' }}>
