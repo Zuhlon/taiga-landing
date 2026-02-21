@@ -2151,14 +2151,49 @@ function LandingConcept4() {
 // + Акцент на ценность для разных ролей
 // + Изображение продукта на iPad
 // + Примеры виджетов
+// + Микроразметка для Яндекс.Метрики веб-визора
 // ============================================
 function LandingConcept5() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', color: '#190750' }}>
       <style>{styles}</style>
       
+      {/* Яндекс.Метрика: Код счётчика с веб-визором */}
+      {/* Замените 106950455 на номер вашего счётчика */}
+      <script
+        id="yandex-metrika-config-concept5"
+        type="text/javascript"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            // ЗАМЕНИТЕ 106950455 НА НОМЕР ВАШЕГО СЧЁТЧИКА
+            ym('106950455', 'init', {
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true,
+              webvisor: true,
+              trackHash: true,
+              ecommerce: "dataLayer"
+            });
+          `
+        }}
+      />
+      
+      {/* Микроразметка для веб-визора: невидимые инпуты для отслеживания состояний */}
+      <input type="hidden" id="ym-concept" value="unified" />
+      <input type="hidden" id="ym-page-type" value="landing" />
+      
       {/* Header */}
-      <header style={{
+      <header 
+        id="header"
+        data-ym-area="header"
+        data-ym-name="Шапка сайта"
+        style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -2172,25 +2207,63 @@ function LandingConcept5() {
         zIndex: 100,
         borderBottom: '1px solid rgba(118,67,215,0.1)',
       }}>
-        <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7' }}>
+        <div 
+          id="logo"
+          data-ym-click-type="navigation"
+          data-ym-name="Логотип"
+          style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7' }}>
           Контакт.ИИ
         </div>
         <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-          <a href="#roles" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Для всех ролей</a>
-          <a href="#widgets" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Виджеты</a>
-          <a href="#transparency" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Прозрачность</a>
-          <a href="#integrations" className="hover-lift" style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Интеграции</a>
-          <button className="btn-primary" style={{
-            padding: '12px 28px',
-            borderRadius: '50px',
-            border: 'none',
-            backgroundColor: '#7643d7',
-            color: '#FFF',
-            fontWeight: 600,
-            cursor: 'pointer',
-            boxShadow: '0 4px 20px rgba(118,67,215,0.3)',
-          }}>
-            Начать бесплатно
+          <a 
+            href="#roles" 
+            id="nav-roles"
+            data-ym-click-type="navigation"
+            data-ym-name="Ссылка: Для всех ролей"
+            className="hover-lift" 
+            style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Для всех ролей</a>
+          <a 
+            href="#widgets" 
+            id="nav-widgets"
+            data-ym-click-type="navigation"
+            data-ym-name="Ссылка: Виджеты"
+            className="hover-lift" 
+            style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Виджеты</a>
+          <a 
+            href="#transparency" 
+            id="nav-transparency"
+            data-ym-click-type="navigation"
+            data-ym-name="Ссылка: Прозрачность"
+            className="hover-lift" 
+            style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Прозрачность</a>
+          <a 
+            href="#integrations" 
+            id="nav-integrations"
+            data-ym-click-type="navigation"
+            data-ym-name="Ссылка: Интеграции"
+            className="hover-lift" 
+            style={{ color: '#190750', textDecoration: 'none', fontSize: '15px', fontWeight: 500 }}>Интеграции</a>
+          <button 
+            id="header-cta"
+            data-ym-click-type="button"
+            data-ym-name="Кнопка: Пригласить коллегу (шапка)"
+            data-ym-goal-id="invite_colleague_header"
+            className="btn-primary" 
+            onClick={() => {
+              const modal = document.getElementById('workspace-modal');
+              if (modal) modal.style.display = 'flex';
+            }}
+            style={{
+              padding: '12px 28px',
+              borderRadius: '50px',
+              border: 'none',
+              backgroundColor: '#7643d7',
+              color: '#FFF',
+              fontWeight: 600,
+              cursor: 'pointer',
+              boxShadow: '0 4px 20px rgba(118,67,215,0.3)',
+            }}>
+            Пригласить коллегу
           </button>
         </nav>
       </header>
@@ -2217,19 +2290,25 @@ function LandingConcept5() {
           📈 Платформа роста выручки через коммуникации
         </div>
         
-        <h1 style={{
-          fontSize: '56px',
-          fontWeight: 800,
-          lineHeight: 1.1,
-          marginBottom: '20px',
-          maxWidth: '1000px',
-          margin: '0 auto 20px',
-          letterSpacing: '-2px',
-        }}>
+        <h1 
+          id="hero-headline"
+          data-ym-name="Заголовок: Продажи начинаются в разговоре"
+          style={{
+            fontSize: '56px',
+            fontWeight: 800,
+            lineHeight: 1.1,
+            marginBottom: '20px',
+            maxWidth: '1000px',
+            margin: '0 auto 20px',
+            letterSpacing: '-2px',
+          }}>
           Продажи начинаются <span className="gradient-text">в разговоре</span>
         </h1>
         
-        <p style={{
+        <p 
+          id="hero-subtitle"
+          data-ym-name="Подзаголовок"
+          style={{
           fontSize: '20px',
           color: '#666',
           maxWidth: '700px',
@@ -2241,31 +2320,55 @@ function LandingConcept5() {
         </p>
         
         {/* Кнопки */}
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '60px' }}>
-          <button className="btn-primary" style={{
-            padding: '18px 40px',
-            borderRadius: '50px',
-            border: 'none',
-            backgroundColor: '#22C55E',
-            color: '#FFF',
-            fontWeight: 600,
-            fontSize: '17px',
-            cursor: 'pointer',
-            boxShadow: '0 8px 30px rgba(34,197,94,0.35)',
-          }}>
-            Получить расчёт ROI
+        <div 
+          id="hero-cta-group"
+          data-ym-area="cta-buttons"
+          data-ym-name="Кнопки действия (Hero)"
+          style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '60px' }}>
+          <button 
+            id="hero-cta-primary"
+            data-ym-click-type="button"
+            data-ym-name="Кнопка: Пригласить коллегу в КонтактИИ"
+            data-ym-goal-id="invite_colleague_hero"
+            className="btn-primary" 
+            onClick={() => {
+              const modal = document.getElementById('workspace-modal');
+              if (modal) modal.style.display = 'flex';
+            }}
+            style={{
+              padding: '18px 40px',
+              borderRadius: '50px',
+              border: 'none',
+              backgroundColor: '#22C55E',
+              color: '#FFF',
+              fontWeight: 600,
+              fontSize: '17px',
+              cursor: 'pointer',
+              boxShadow: '0 8px 30px rgba(34,197,94,0.35)',
+            }}>
+            Пригласить коллегу в КонтактИИ
           </button>
-          <button className="hover-lift" style={{
-            padding: '18px 40px',
-            borderRadius: '50px',
-            border: '2px solid #7643d7',
-            backgroundColor: 'transparent',
-            color: '#7643d7',
-            fontWeight: 600,
-            fontSize: '17px',
-            cursor: 'pointer',
-          }}>
-            Попробовать 14 дней бесплатно
+          <button 
+            id="hero-cta-secondary"
+            data-ym-click-type="button"
+            data-ym-name="Кнопка: Пригласить коллегу (вторичная)"
+            data-ym-goal-id="invite_colleague_secondary"
+            className="hover-lift" 
+            onClick={() => {
+              const modal = document.getElementById('workspace-modal');
+              if (modal) modal.style.display = 'flex';
+            }}
+            style={{
+              padding: '18px 40px',
+              borderRadius: '50px',
+              border: '2px solid #7643d7',
+              backgroundColor: 'transparent',
+              color: '#7643d7',
+              fontWeight: 600,
+              fontSize: '17px',
+              cursor: 'pointer',
+            }}>
+            Пригласить коллегу
           </button>
         </div>
 
@@ -2310,7 +2413,11 @@ function LandingConcept5() {
       </section>
 
       {/* БЛОК: Ценность для разных ролей - АДМИНИСТРАТОР vs РУКОВОДИТЕЛЬ */}
-      <section id="roles" style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
+      <section 
+        id="roles"
+        data-ym-area="roles"
+        data-ym-name="Блок: Ценность для ролей"
+        style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <div style={{
@@ -2325,7 +2432,10 @@ function LandingConcept5() {
             }}>
               👥 Ценность для каждой роли
             </div>
-            <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
+            <h2 
+              id="roles-headline"
+              data-ym-name="Заголовок: Что получит администратор и что увидит руководитель"
+              style={{ fontSize: '48px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
               Что <span className="gradient-text">получит администратор</span> и что <span className="gradient-text">увидит руководитель</span>
             </h2>
             <p style={{ fontSize: '18px', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
@@ -2337,7 +2447,10 @@ function LandingConcept5() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', marginBottom: '60px' }}>
             
             {/* АДМИНИСТРАТОР */}
-            <div style={{
+            <div 
+              id="admin-card"
+              data-ym-name="Карточка: Администратор"
+              style={{
               backgroundColor: '#FAF8FF',
               borderRadius: '32px',
               padding: '48px',
@@ -2398,11 +2511,14 @@ function LandingConcept5() {
             </div>
 
             {/* РУКОВОДИТЕЛЬ */}
-            <div style={{
-              backgroundColor: '#FAF8FF',
-              borderRadius: '32px',
-              padding: '48px',
-              border: '2px solid rgba(34,197,94,0.2)',
+            <div 
+              id="supervisor-card"
+              data-ym-name="Карточка: Руководитель"
+              style={{
+                backgroundColor: '#FAF8FF',
+                borderRadius: '32px',
+                padding: '48px',
+                border: '2px solid rgba(34,197,94,0.2)',
             }}>
               <div style={{ 
                 display: 'flex', 
@@ -2462,7 +2578,11 @@ function LandingConcept5() {
       </section>
 
       {/* БЛОК: Ценность для других сотрудников */}
-      <section style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
+      <section 
+        id="employees"
+        data-ym-area="employees"
+        data-ym-name="Блок: Ценность для сотрудников"
+        style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <div style={{
@@ -2737,7 +2857,11 @@ function LandingConcept5() {
       </section>
 
       {/* БЛОК: Примеры виджетов */}
-      <section id="widgets" style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
+      <section 
+        id="widgets"
+        data-ym-area="widgets"
+        data-ym-name="Блок: Виджеты"
+        style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <div style={{
@@ -2810,7 +2934,11 @@ function LandingConcept5() {
       </section>
 
       {/* Прозрачность расчётов */}
-      <section id="transparency" style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
+      <section 
+        id="transparency"
+        data-ym-area="transparency"
+        data-ym-name="Блок: Прозрачность расчётов"
+        style={{ padding: '120px 20px', backgroundColor: '#FAF8FF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <div style={{
@@ -2913,7 +3041,11 @@ function LandingConcept5() {
       </section>
 
       {/* Интеграции */}
-      <section id="integrations" style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
+      <section 
+        id="integrations"
+        data-ym-area="integrations"
+        data-ym-name="Блок: Интеграции"
+        style={{ padding: '120px 20px', backgroundColor: '#FFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '20px', letterSpacing: '-1px' }}>
             Работает с <span className="gradient-text">вашими системами</span>
@@ -2945,7 +3077,11 @@ function LandingConcept5() {
       </section>
 
       {/* Игра - виральный элемент */}
-      <section style={{ padding: '120px 20px', background: 'linear-gradient(180deg, #FFF8E7 0%, #FFF 100%)' }}>
+      <section 
+        id="game"
+        data-ym-area="game"
+        data-ym-name="Блок: Игра Мёдом намазано"
+        style={{ padding: '120px 20px', background: 'linear-gradient(180deg, #FFF8E7 0%, #FFF 100%)' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
             <div>
@@ -2968,18 +3104,27 @@ function LandingConcept5() {
                 Уникальный элемент вовлечения. Выиграйте месяц бесплатного использования Контакт.ИИ! 
                 Поделитесь с коллегами — пусть тоже попробуют.
               </p>
-              <button style={{
-                padding: '18px 40px',
-                borderRadius: '50px',
-                border: 'none',
-                background: 'linear-gradient(90deg, #FFD700, #FFA500)',
-                color: '#190750',
-                fontWeight: 700,
-                fontSize: '17px',
-                cursor: 'pointer',
-                boxShadow: '0 8px 32px rgba(255,165,0,0.3)',
+              <button 
+                id="game-cta"
+                data-ym-click-type="button"
+                data-ym-name="Кнопка: Пригласить коллегу (игра)"
+                data-ym-goal-id="invite_colleague_game"
+                onClick={() => {
+                  const modal = document.getElementById('workspace-modal');
+                  if (modal) modal.style.display = 'flex';
+                }}
+                style={{
+                  padding: '18px 40px',
+                  borderRadius: '50px',
+                  border: 'none',
+                  background: 'linear-gradient(90deg, #FFD700, #FFA500)',
+                  color: '#190750',
+                  fontWeight: 700,
+                  fontSize: '17px',
+                  cursor: 'pointer',
+                  boxShadow: '0 8px 32px rgba(255,165,0,0.3)',
               }}>
-                Играть бесплатно 🍯
+                Пригласить коллегу в КонтактИИ
               </button>
             </div>
 
@@ -3022,10 +3167,14 @@ function LandingConcept5() {
         </div>
       </section>
 
-      {/* CTA - Создать рабочее место */}
-      <section style={{ padding: '120px 20px', textAlign: 'center', backgroundColor: '#190750' }}>
+      {/* CTA - Пригласить коллегу */}
+      <section 
+        id="cta-section"
+        data-ym-area="cta"
+        data-ym-name="Блок: Пригласить коллегу"
+        style={{ padding: '120px 20px', textAlign: 'center', backgroundColor: '#190750' }}>
         <h2 style={{ fontSize: '48px', fontWeight: 800, marginBottom: '24px', color: '#FFF' }}>
-          Создайте рабочее место для коллеги
+          Пригласите коллегу в КонтактИИ
         </h2>
         <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', marginBottom: '20px', maxWidth: '600px', margin: '0 auto 20px' }}>
           Пригласите руководителя или оператора — они увидят ценность сервиса
@@ -3036,6 +3185,10 @@ function LandingConcept5() {
         
         {/* Кнопка открытия формы */}
         <button 
+          id="cta-main-button"
+          data-ym-click-type="button"
+          data-ym-name="Кнопка: Пригласить коллегу в КонтактИИ"
+          data-ym-goal-id="invite_colleague_main"
           onClick={() => {
             const modal = document.getElementById('workspace-modal');
             if (modal) modal.style.display = 'flex';
@@ -3052,7 +3205,7 @@ function LandingConcept5() {
             cursor: 'pointer',
             boxShadow: '0 8px 40px rgba(34,197,94,0.5)',
           }}>
-          Создать рабочее место
+          Пригласить коллегу в КонтактИИ
         </button>
         
         <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center', gap: '40px', color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
@@ -3475,10 +3628,17 @@ function LandingConcept5() {
       </div>
 
       {/* Footer */}
-      <footer style={{ padding: '60px 20px', borderTop: '1px solid rgba(118,67,215,0.1)', backgroundColor: '#FFF' }}>
+      <footer 
+        id="footer"
+        data-ym-area="footer"
+        data-ym-name="Подвал сайта"
+        style={{ padding: '60px 20px', borderTop: '1px solid rgba(118,67,215,0.1)', backgroundColor: '#FFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px' }}>
           <div>
-            <div style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7', marginBottom: '16px' }}>
+            <div 
+              id="footer-logo"
+              data-ym-name="Логотип (футер)"
+              style={{ fontSize: '24px', fontWeight: 800, color: '#7643d7', marginBottom: '16px' }}>
               Контакт.ИИ
             </div>
             <div style={{ color: '#666', fontSize: '14px', lineHeight: 1.6 }}>
@@ -3488,33 +3648,45 @@ function LandingConcept5() {
           <div>
             <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Продукт</div>
             <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
-              <div>Витрина виджетов</div>
-              <div>ИИ-ассистент</div>
-              <div>Транскрибация</div>
-              <div>Омниканальность</div>
+              <div data-ym-name="Ссылка: Витрина виджетов">Витрина виджетов</div>
+              <div data-ym-name="Ссылка: ИИ-ассистент">ИИ-ассистент</div>
+              <div data-ym-name="Ссылка: Транскрибация">Транскрибация</div>
+              <div data-ym-name="Ссылка: Омниканальность">Омниканальность</div>
             </div>
           </div>
           <div>
             <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Интеграции</div>
             <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
-              <div>Asterisk</div>
-              <div>AmoCRM</div>
-              <div>Битрикс24</div>
-              <div>FreePBX</div>
+              <div data-ym-name="Ссылка: Asterisk">Asterisk</div>
+              <div data-ym-name="Ссылка: AmoCRM">AmoCRM</div>
+              <div data-ym-name="Ссылка: Битрикс24">Битрикс24</div>
+              <div data-ym-name="Ссылка: FreePBX">FreePBX</div>
             </div>
           </div>
           <div>
             <div style={{ fontWeight: 700, marginBottom: '16px', color: '#190750' }}>Контакты</div>
             <div style={{ color: '#666', fontSize: '14px', lineHeight: 2 }}>
-              <div>📞 8 800 123-45-67</div>
-              <div>📧 info@contact-ai.ru</div>
-              <div>📱 Телеграм-бот</div>
+              <div data-ym-name="Телефон">📞 8 800 123-45-67</div>
+              <div data-ym-name="Email">📧 info@contact-ai.ru</div>
+              <div data-ym-name="Телеграм-бот">📱 Телеграм-бот</div>
             </div>
           </div>
         </div>
         <div style={{ textAlign: 'center', color: '#999', fontSize: '12px', marginTop: '40px' }}>
           © 2026 Контакт.ИИ. Все права защищены.
         </div>
+        
+        {/* Яндекс.Метрика: noscript для сбора статистики при отключённом JS */}
+        {/* Замените 106950455 на номер вашего счётчика */}
+        <noscript>
+          <div>
+            <img 
+              src="https://mc.yandex.ru/watch/106950455" 
+              style={{ position: 'absolute', left: '-9999px' }} 
+              alt="" 
+            />
+          </div>
+        </noscript>
       </footer>
     </div>
   )
