@@ -2265,6 +2265,31 @@ function LandingConcept5() {
             }}>
             Пригласить коллегу
           </button>
+          <button 
+            id="header-video-cta"
+            data-ym-click-type="button"
+            data-ym-name="Кнопка: Показать сервис коллеге (шапка)"
+            data-ym-goal-id="show_service_video_header"
+            onClick={() => {
+              const modal = document.getElementById('video-call-modal');
+              if (modal) modal.style.display = 'flex';
+            }}
+            style={{
+              padding: '12px 24px',
+              borderRadius: '50px',
+              border: '2px solid #3B82F6',
+              backgroundColor: 'transparent',
+              color: '#3B82F6',
+              fontWeight: 600,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontSize: '15px',
+            }}>
+            <span style={{ fontSize: '18px' }}>📹</span>
+            Показать сервис коллеге
+          </button>
         </nav>
       </header>
 
